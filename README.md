@@ -3,5 +3,5 @@
 
 Klient: Health Promotion Programs projekt, esindaja Kairi Märk
 
-Meeskond: Reino Ristissaar, Enriko Ojala, Ragnar Neljand
+Meeskond: Reino, Enriko, Ragnar
 
