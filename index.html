@@ -5,157 +5,74 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/main.css">
 
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"
-        />
+        <script src="js/jquery-3.3.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
 
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"
-        ></script>
-
-        <title>$cityName Elukeskkonna planeerimine</title>
+        <title>Lauamäng "Elukeskkonna planeerimine"</title>
     </head>
     <body>
-
-        <script>
-
-            $(window).on('load',function(){
-                $('#introductionModal').modal('show');
-            });
-
-        </script>
-
-        <!-- Start of introductionModal -->
-        <div class="modal fade" id="introductionModal" tabindex="-1" role="dialog" aria-labelledby="introductionModal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="introductionModalLongTitle">Lugupeetud Kohalviibijad!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                        <p class="text-justify">Aitäh kõigile, kes te tänasele linnaplaneerimise koosolekule olete tulnud.</p>
-                        <p class="text-justify">Nagu te enda ees olevalt plaanilt võite näha, on meil linnas 3 planeerimata kinnistut, tähistatud 
-                        nimega Tühermaa. Tänase kokkusaamise eesmärk <b>on nendele kolmele kinnistule otstarbe 
-                        leidmine ning üldisemalt linnale parima tulevikuplaani koostamine.</b></p>
-                </div>
-                <div class="modal-footer">
-                <button type="button" data-dismiss="modal" class="btn btn-primary mx-auto">OK</button>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">HPP</a>
+            
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mängu juhend</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ettepaneku kaardid</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">KKK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Toetajad</a>
+                    </li>
+                </ul>
             </div>
-            </div>
-        </div>
-        <!-- End of introductionModal -->
-
-        <!-- Start of selectNewPropertyModal -->
-        <div class="modal fade" id="selectNewPropertyModal" tabindex="-1" role="dialog" aria-labelledby="selectNewPropertyModalTitle" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="selectNewPropertyModalTitle">Vali kinnistu, mida ehitada Tühermaa asemele</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                        <img src="ettepaneku_kaardid/Jaatmejaam1.png" width="185" class="py-md-2 px-1"/>
-                        <img src="ettepaneku_kaardid/Eramud1.png" width="185"  class="py-md-2 px-1"/>
-                        <img src="ettepaneku_kaardid/Linnapark.png" width="185"  class="py-md-2 px-1"/>
-                        <img src="ettepaneku_kaardid/Looduskaitseala1.png" width="185"  class="py-md-2 px-1"/>
-                        <img src="ettepaneku_kaardid/Parkla1.png" width="185"  class="py-md-2 px-1"/>
-                        <img src="ettepaneku_kaardid/Sotsiaalmaja1.png" width="185"  class="py-md-2 px-1"/>
-                        <img src="ettepaneku_kaardid/Staadion1.png" width="185"  class="py-md-2 px-1"/>
-                        <img src="ettepaneku_kaardid/Tehas1.png" width="185"  class="py-md-2 px-1"/>
-                        <img src="ettepaneku_kaardid/Tehase_parkla1.png" width="185"  class="py-md-2 px-1"/>
-                        <img src="ettepaneku_kaardid/Valijõusaal1.png" width="185"  class="py-md-2 px-1"/>
-                        <img src="ettepaneku_kaardid/Valge kaart1 valge taustaga.png" width="185"  class="py-md-2 px-1"  data-toggle="modal" data-target="#exampleModal2"/>
-                </div>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel2">Kirjuta lühidalt siia oma idee</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Salvesta</button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Vali</button>
-                </div>
-            </div>
-            </div>
-        </div>
-        <!-- End of selectNewPropertyModal -->
-
-        <h3 class="py-3 text-center">VILJANDI Elukeskkonna planeerimine. Rahvaarv 50000</h3>
-
-        <div class="container game-board">
+        </nav>
+        
+        <div class="container">
+            <h3 class="text-center">Lauamäng "Elukeskkonna planeerimine"</h3>
+            <br>
+            <br>
             <div class="row">
-                <img src="mangulaud/maastik1.png"/>
-                <img src="mangulaud/maastik2.png"/>
-                <img src="mangulaud/maastik3.png"/>
-                <img src="mangulaud/maastik4.png" data-toggle="modal" data-target="#selectNewPropertyModal" />
-                <img src="mangulaud/maastik5.png"/>
+                <div class="col-md-6 my-auto"><p>It is a long established fact that a reader will be distracted by the readable 
+                    content of a page when looking at its layout. 
+                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                </div>
+                <div class="col-md-6"><img class="img-fluid" src="https://picsum.photos/400/200" alt="lorem picsum"></div>
             </div>
-
+            <br>
             <div class="row">
-                <img src="mangulaud/maastik6.png"/>
-                <img src="mangulaud/maastik7.png"/>
-                <img src="mangulaud/maastik8.png"/>
-                <img src="mangulaud/maastik9.png"/>
-                <img src="mangulaud/maastik10.png"/>
+                <div class="col-md-6"><img class="img-fluid" src="https://picsum.photos/400/200" alt="lorem picsum"></div>
+                <div class="col-md-6 my-auto"><p>It is a long established fact that a reader will be distracted by the readable 
+                    content of a page when looking at its layout. 
+                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                </div>
             </div>
+            <br>
             <div class="row">
-                <img src="mangulaud/maastik11.png"/>
-                <img src="mangulaud/maastik12.png"/>
-                <img src="mangulaud/maastik13.png"/>
-                <img src="mangulaud/maastik14.png"/>
-                <img src="mangulaud/maastik15.png"/>
+                <div class="col-md-6 my-auto"><p>It is a long established fact that a reader will be distracted by the readable 
+                    content of a page when looking at its layout. 
+                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                </div>
+                <div class="col-md-6"><img class="img-fluid" src="https://picsum.photos/400/200" alt="lorem picsum"></div>
             </div>
+            <br>
+            <br>
             <div class="row">
-                <img src="mangulaud/maastik16.png"/>
-                <img src="mangulaud/maastik17.png"/>
-                <img src="mangulaud/maastik18.png"/>
-                <img src="mangulaud/maastik19.png"/>
-                <img src="mangulaud/maastik20.png"/>
+                <a class="btn btn-primary btn-lg mx-auto" href="city_name_and_population.html" role="button">Alusta mängu!</a>
             </div>
+            <br>
         </div>
     </body>
 </html>
-
-<!-- git test -->
