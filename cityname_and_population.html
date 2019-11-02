@@ -64,16 +64,24 @@
             Leppige kokku ja andke linnale nimi ning rahvaarv.
           </h4>
           <br />
-          <form class="form-data" action="city_planner.html" method="POST">
+          <form class="form-data" action="city_planner.html">
+          <!-- <form class="form-data" action="city_planner.html" method="POST"> -->
             <label for="cityName" class="sr-only">Linnanimi</label>
             <input
               type="text"
               id="cityName"
               class="form-control"
               placeholder="Linnanimi"
-              required
               autofocus
             />
+            <!-- <input
+              type="text"
+              id="cityName"
+              class="form-control"
+              placeholder="Linnanimi"
+              required
+              autofocus
+            /> -->
             <br />
             <label for="population" class="sr-only">Rahvaarv</label>
             <input
@@ -81,8 +89,14 @@
               id="population"
               class="form-control"
               placeholder="Rahvaarv"
-              required
             />
+            <!-- <input
+              type="number"
+              id="population"
+              class="form-control"
+              placeholder="Rahvaarv"
+              required
+            /> -->
             <br />
             <button class="btn btn-lg btn-primary btn-block" type="submit">
               Edasi
