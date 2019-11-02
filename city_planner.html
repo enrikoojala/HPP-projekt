@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <link rel="stylesheet" href="css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <script src="js/jquery-3.3.1.slim.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css">
 
-        <title>Linnaplaneerija</title>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">HPP</a>
-            
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <title>Linnaplaneerija</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">HPP</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Mängu juhend</a>
                 </li>
@@ -36,57 +39,65 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Toetajad</a>
                 </li>
-                </ul>
-            </div>
-        </nav>
-        
-        <div class="container">
-            <br>
-            <br>
-            <br>
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <h3>Palun valige eestkõneleja, kui on valitud siis vajutage kaardi peale.</h3>
-                    <br>
-                    <br>
-                    <label class="card-role">
-                        <input class="input-hide" type="checkbox"  />
-                        <div class="card">
-                            <div class="front border border-success"></div>
-                            <div class="back border border-primary">
-                                <img class="img-fluid" src="gfx/role_descriptions/qr_linnaplaneerija.png" alt="Linnaplaneerija ruutkood">
-                                <button class="btn btn-md btn-primary" data-toggle="modal" data-target="#lookLinkModal">Vaata linki</button>
-                            </div>
-                        </div>
-                    </label>
-                    <!-- Modal -->
-                    <div class="modal fade" id="lookLinkModal" tabindex="-1" role="dialog" aria-labelledby="lookLinkModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="lookLinkModalLabel">Linnaplaneerija isikukaardi link</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+            </ul>
+        </div>
+    </nav>
 
-                                </div>
-                                <div class="modal-body">
-                                    <a href="rollid/linnaplaneerija/" target="_blank">www.ristissaar.ee/hpp/rollid/linnaplaneerija/</<a></p>                                   
-                                </div>
-                                
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Sulge</button>
-                                </div>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h3>Palun valige eestkõneleja, kui on valitud siis vajutage kaardi peale.</h3>
+                <br>
+                <br>
+                <label class="card-role">
+                    <input class="input-hide" type="checkbox" />
+                    <div class="card">
+                        <div class="front border border-success"></div>
+                        <div class="back border border-primary">
+                            <img class="img-fluid" src="gfx/role_descriptions/qr_linnaplaneerija.png"
+                                alt="Linnaplaneerija ruutkood">
+                            <button class="btn btn-md btn-primary" data-toggle="modal"
+                                data-target="#lookLinkModal">Vaata linki</button>
+                        </div>
+                    </div>
+                </label>
+                <!-- Modal -->
+                <div class="modal fade" id="lookLinkModal" tabindex="-1" role="dialog"
+                    aria-labelledby="lookLinkModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="lookLinkModalLabel">Linnaplaneerija isikukaardi link</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+
+                            </div>
+                            <div class="modal-body">
+                                <a href="rollid/linnaplaneerija/"
+                                    target="_blank">www.ristissaar.ee/hpp/rollid/linnaplaneerija/</<a>
+                                    </p>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary mx-auto"
+                                    data-dismiss="modal">Sulge</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
-            <div class="row">
-                <a class="btn btn-primary btn-lg mx-auto" href="roles.html" role="button">Edasi</a>
-            </div>
-            <br>
         </div>
-    </body>
+        <br>
+        <br>
+        <div class="row">
+            <a class="btn btn-primary btn-lg mx-auto" href="roles.html" role="button">Edasi</a>
+        </div>
+        <br>
+    </div>
+</body>
+
 </html>

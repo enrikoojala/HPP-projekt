@@ -1,276 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <link rel="stylesheet" href="css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
-        <script src="js/jquery-3.3.1.slim.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 
-        <title>Rollide valimine</title>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">HPP</a>
-            
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mängu juhend</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Ettepaneku kaardid</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">KKK</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Toetajad</a>
-                </li>
-                </ul>
+    <title>Rollide valimine</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">HPP</a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mängu juhend</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ettepaneku kaardid</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">KKK</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Toetajad</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <br />
+      <div class="row">
+        <h3 class="mx-auto">
+          Vali kaart, kui kõik kaardid võetud, siis saab edasi minna.
+        </h3>
+      </div>
+      <div class="row text-center">
+        <!-- 1. Kaart -->
+        <div class="col-md-4">
+          <br />
+          <label class="card-role">
+            <input class="input-hide" type="checkbox" />
+            <div class="card">
+              <div class="front border border-success">
+                <h1 class="my-auto">1.</h1>
+              </div>
+              <div class="back border border-danger">
+                <img
+                  class="img-fluid"
+                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
+                  alt="Investori ruutkood"
+                />
+                <button
+                  class="btn btn-md btn-primary"
+                  data-toggle="modal"
+                  data-target="#lookLinkModal"
+                >
+                  Vaata linki
+                </button>
+              </div>
             </div>
-        </nav>
-        
-        <div class="container">
-            <br>
-            <div class="row">
-                <h3 class="mx-auto">Vali kaart, kui kõik kaardid võetud, siis saab edasi minna.</h3>
+          </label>
+          <!-- 1. Kaart Modal -->
+          <div
+            class="modal fade"
+            id="lookLinkModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="lookLinkModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="lookLinkModalLabel">
+                    Investori isikukaardi link.
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <a href="person_card_2.html" target="_blank"
+                    >Investori isikukaart</a
+                  >
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary mx-auto"
+                    data-dismiss="modal"
+                  >
+                    Sulge
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="row text-center">
-                <!-- 1. Kaart -->
-                <div class="col-md-4">
-                    <br>
-                    <label class="card-role">
-                        <input class="input-hide" type="checkbox"  />
-                        <div class="card">
-                            <div class="front border border-success">
-                                <h1 class="my-auto">1.</h1>
-                            </div>
-                            <div class="back border border-danger">
-                                <img class="img-fluid" src="gfx/role_descriptions/qr_linnaplaneerija.png" alt="Investori ruutkood">
-                                <button class="btn btn-md btn-primary" data-toggle="modal" data-target="#lookLinkModal">Vaata linki</button>
-                            </div>
-                        </div>
-                    </label>
-                    <!-- 1. Kaart Modal -->
-                    <div class="modal fade" id="lookLinkModal" tabindex="-1" role="dialog" aria-labelledby="lookLinkModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="lookLinkModalLabel">Investori isikukaardi link.</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <a href="person_card_2.html" target="_blank">Investori isikukaart</a>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Sulge</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 2. Kaart -->
-                <div class="col-md-4">
-                    <br>
-                    <label class="card-role">
-                        <input class="input-hide" type="checkbox"  />
-                        <div class="card">
-                            <div class="front border border-success">
-                                <h1 class="my-auto">2.</h1>
-                            </div>
-                            <div class="back border border-danger">
-                                <img class="img-fluid" src="gfx/role_descriptions/qr_linnaplaneerija.png" alt="Sotsiaalnõuniku ruutkood">
-                                <button class="btn btn-md btn-primary" data-toggle="modal" data-target="#lookLinkModal">Vaata linki</button>
-                            </div>
-                        </div>
-                    </label>
-                    <!-- 2. Kaart Modal -->
-                    <div class="modal fade" id="lookLinkModal" tabindex="-1" role="dialog" aria-labelledby="lookLinkModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="lookLinkModalLabel">Sotsiaalnõuniku isikukaardi link.</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <a href="person_card_3.html" target="_blank">Sotsiaalnõuniku isikukaart</a>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Sulge</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 3. Kaart -->
-                <div class="col-md-4">
-                    <br>
-                    <label class="card-role">
-                        <input class="input-hide" type="checkbox"  />
-                        <div class="card">
-                            <div class="front border border-success">
-                                <h1 class="my-auto">3.</h1>
-                            </div>
-                            <div class="back border border-danger">
-                                <img class="img-fluid" src="gfx/role_descriptions/qr_linnaplaneerija.png" alt="Looduskaitsebioloogi ruutkood">
-                                <button class="btn btn-md btn-primary" data-toggle="modal" data-target="#lookLinkModal">Vaata linki</button>
-                            </div>
-                        </div>
-                    </label>
-                    <!-- 3. Kaart Modal -->
-                    <div class="modal fade" id="lookLinkModal" tabindex="-1" role="dialog" aria-labelledby="lookLinkModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="lookLinkModalLabel">Looduskaitsebioloogi isikukaardi link.</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <a href="person_card_4.html" target="_blank">Looduskaitsebioloogi isikukaart</a>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Sulge</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-center">
-                <!-- 4. Kaart -->
-                <div class="col-md-4">
-                    <br>
-                    <label class="card-role">
-                        <input class="input-hide" type="checkbox"  />
-                        <div class="card">
-                            <div class="front border border-success">
-                                <h1 class="my-auto">4.</h1>
-                            </div>
-                            <div class="back border border-danger">
-                                <img class="img-fluid" src="gfx/role_descriptions/qr_linnaplaneerija.png" alt="Kinnisvaraarendaja ruutkood">
-                                <button class="btn btn-md btn-primary" data-toggle="modal" data-target="#lookLinkModal">Vaata linki</button>
-                            </div>
-                        </div>
-                    </label>
-                    <!-- 4. Kaart Modal -->
-                    <div class="modal fade" id="lookLinkModal" tabindex="-1" role="dialog" aria-labelledby="lookLinkModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="lookLinkModalLabel">Kinnisvaraarendaja isikukaardi link.</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <a href="person_card_5.html" target="_blank">Kinnisvaraarendaja isikukaart</a>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Sulge</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 5. Kaart -->
-                <div class="col-md-4">
-                    <br>
-                    <label class="card-role">
-                        <input class="input-hide" type="checkbox"  />
-                        <div class="card">
-                            <div class="front border border-success">
-                                <h1 class="my-auto">5.</h1>
-                            </div>
-                            <div class="back border border-danger">
-                                <img class="img-fluid" src="gfx/role_descriptions/qr_linnaplaneerija.png" alt="Koolidirektori ruutkood">
-                                <button class="btn btn-md btn-primary" data-toggle="modal" data-target="#lookLinkModal">Vaata linki</button>
-                            </div>
-                        </div>
-                    </label>
-                    <!-- 5. Kaart Modal -->
-                    <div class="modal fade" id="lookLinkModal" tabindex="-1" role="dialog" aria-labelledby="lookLinkModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="lookLinkModalLabel">Koolidirektori isikukaardi link.</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <a href="person_card_6.html" target="_blank">Koolidirektori isikukaart</a>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Sulge</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 6. Kaart -->
-                <div class="col-md-4">
-                    <br>
-                    <label class="card-role">
-                        <input class="input-hide" type="checkbox"  />
-                        <div class="card">
-                            <div class="front border border-success">
-                                <h1 class="my-auto">6.</h1>
-                            </div>
-                            <div class="back border border-danger">
-                                <img class="img-fluid" src="gfx/role_descriptions/qr_linnaplaneerija.png" alt="Aktiivse linnaelaniku ruutkood">
-                                <button class="btn btn-md btn-primary" data-toggle="modal" data-target="#lookLinkModal">Vaata linki</button>
-                            </div>
-                        </div>
-                    </label>
-                    <!-- 6. Kaart Modal -->
-                    <div class="modal fade" id="lookLinkModal" tabindex="-1" role="dialog" aria-labelledby="lookLinkModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="lookLinkModalLabel">Aktiivse linnaelaniku isikukaardi link.</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <a href="person_card_7.html" target="_blank">Aktiivse linnaelaniku isikukaart</a>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Sulge</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="row">
-                <a class="btn btn-primary btn-lg mx-auto" href="gameboard.html" role="button">Edasi</a>
-            </div>
-            <br>
+          </div>
         </div>
-    </body>
+        <!-- 2. Kaart -->
+        <div class="col-md-4">
+          <br />
+          <label class="card-role">
+            <input class="input-hide" type="checkbox" />
+            <div class="card">
+              <div class="front border border-success">
+                <h1 class="my-auto">2.</h1>
+              </div>
+              <div class="back border border-danger">
+                <img
+                  class="img-fluid"
+                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
+                  alt="Sotsiaalnõuniku ruutkood"
+                />
+                <button
+                  class="btn btn-md btn-primary"
+                  data-toggle="modal"
+                  data-target="#lookLinkModal"
+                >
+                  Vaata linki
+                </button>
+              </div>
+            </div>
+          </label>
+          <!-- 2. Kaart Modal -->
+          <div
+            class="modal fade"
+            id="lookLinkModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="lookLinkModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="lookLinkModalLabel">
+                    Sotsiaalnõuniku isikukaardi link.
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <a href="person_card_3.html" target="_blank"
+                    >Sotsiaalnõuniku isikukaart</a
+                  >
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary mx-auto"
+                    data-dismiss="modal"
+                  >
+                    Sulge
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3. Kaart -->
+        <div class="col-md-4">
+          <br />
+          <label class="card-role">
+            <input class="input-hide" type="checkbox" />
+            <div class="card">
+              <div class="front border border-success">
+                <h1 class="my-auto">3.</h1>
+              </div>
+              <div class="back border border-danger">
+                <img
+                  class="img-fluid"
+                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
+                  alt="Looduskaitsebioloogi ruutkood"
+                />
+                <button
+                  class="btn btn-md btn-primary"
+                  data-toggle="modal"
+                  data-target="#lookLinkModal"
+                >
+                  Vaata linki
+                </button>
+              </div>
+            </div>
+          </label>
+          <!-- 3. Kaart Modal -->
+          <div
+            class="modal fade"
+            id="lookLinkModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="lookLinkModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="lookLinkModalLabel">
+                    Looduskaitsebioloogi isikukaardi link.
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <a href="person_card_4.html" target="_blank"
+                    >Looduskaitsebioloogi isikukaart</a
+                  >
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary mx-auto"
+                    data-dismiss="modal"
+                  >
+                    Sulge
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <!-- 4. Kaart -->
+        <div class="col-md-4">
+          <br />
+          <label class="card-role">
+            <input class="input-hide" type="checkbox" />
+            <div class="card">
+              <div class="front border border-success">
+                <h1 class="my-auto">4.</h1>
+              </div>
+              <div class="back border border-danger">
+                <img
+                  class="img-fluid"
+                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
+                  alt="Kinnisvaraarendaja ruutkood"
+                />
+                <button
+                  class="btn btn-md btn-primary"
+                  data-toggle="modal"
+                  data-target="#lookLinkModal"
+                >
+                  Vaata linki
+                </button>
+              </div>
+            </div>
+          </label>
+          <!-- 4. Kaart Modal -->
+          <div
+            class="modal fade"
+            id="lookLinkModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="lookLinkModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="lookLinkModalLabel">
+                    Kinnisvaraarendaja isikukaardi link.
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <a href="person_card_5.html" target="_blank"
+                    >Kinnisvaraarendaja isikukaart</a
+                  >
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary mx-auto"
+                    data-dismiss="modal"
+                  >
+                    Sulge
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 5. Kaart -->
+        <div class="col-md-4">
+          <br />
+          <label class="card-role">
+            <input class="input-hide" type="checkbox" />
+            <div class="card">
+              <div class="front border border-success">
+                <h1 class="my-auto">5.</h1>
+              </div>
+              <div class="back border border-danger">
+                <img
+                  class="img-fluid"
+                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
+                  alt="Koolidirektori ruutkood"
+                />
+                <button
+                  class="btn btn-md btn-primary"
+                  data-toggle="modal"
+                  data-target="#lookLinkModal"
+                >
+                  Vaata linki
+                </button>
+              </div>
+            </div>
+          </label>
+          <!-- 5. Kaart Modal -->
+          <div
+            class="modal fade"
+            id="lookLinkModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="lookLinkModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="lookLinkModalLabel">
+                    Koolidirektori isikukaardi link.
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <a href="person_card_6.html" target="_blank"
+                    >Koolidirektori isikukaart</a
+                  >
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary mx-auto"
+                    data-dismiss="modal"
+                  >
+                    Sulge
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 6. Kaart -->
+        <div class="col-md-4">
+          <br />
+          <label class="card-role">
+            <input class="input-hide" type="checkbox" />
+            <div class="card">
+              <div class="front border border-success">
+                <h1 class="my-auto">6.</h1>
+              </div>
+              <div class="back border border-danger">
+                <img
+                  class="img-fluid"
+                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
+                  alt="Aktiivse linnaelaniku ruutkood"
+                />
+                <button
+                  class="btn btn-md btn-primary"
+                  data-toggle="modal"
+                  data-target="#lookLinkModal"
+                >
+                  Vaata linki
+                </button>
+              </div>
+            </div>
+          </label>
+          <!-- 6. Kaart Modal -->
+          <div
+            class="modal fade"
+            id="lookLinkModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="lookLinkModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="lookLinkModalLabel">
+                    Aktiivse linnaelaniku isikukaardi link.
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <a href="person_card_7.html" target="_blank"
+                    >Aktiivse linnaelaniku isikukaart</a
+                  >
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary mx-auto"
+                    data-dismiss="modal"
+                  >
+                    Sulge
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="row">
+        <a
+          class="btn btn-primary btn-lg mx-auto"
+          href="gameboard.html"
+          role="button"
+          >Edasi</a
+        >
+      </div>
+      <br />
+    </div>
+  </body>
 </html>
