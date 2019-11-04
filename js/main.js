@@ -1,7 +1,7 @@
 // When the HTML Body element will load it will display a message in a modal box
-$(window).on('load',function(){
-    $('#introductionModal').modal('show');
-});
+// $(window).on('load',function(){
+//     $('#introductionModal').modal('show');
+// });
 
 // Get Hostname and location
 

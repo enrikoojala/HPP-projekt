@@ -17,6 +17,7 @@
   </head>
 
   <body>
+    <!-- Start of navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <button
         class="navbar-toggler"
@@ -48,6 +49,7 @@
         </ul>
       </div>
     </nav>
+    <!-- End of navbar -->
 
     <!-- Start of introductionModal -->
     <div
@@ -130,57 +132,57 @@
             <img
               src="gfx/proposal_cards/Jaatmejaam1.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
             />
             <img
               src="gfx/proposal_cards/Eramud1.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
             />
             <img
               src="gfx/proposal_cards/Linnapark.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
             />
             <img
               src="gfx/proposal_cards/Looduskaitseala1.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
             />
             <img
               src="gfx/proposal_cards/Parkla1.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
             />
             <img
               src="gfx/proposal_cards/Sotsiaalmaja1.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
             />
             <img
               src="gfx/proposal_cards/Staadion1.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
             />
             <img
               src="gfx/proposal_cards/Tehas1.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
             />
             <img
               src="gfx/proposal_cards/Tehase_parkla1.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
             />
             <img
               src="gfx/proposal_cards/Valijõusaal1.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
             />
             <img
               src="gfx/proposal_cards/Valge kaart1 valge taustaga.png"
               width="185"
-              class="py-md-2 px-1"
+              class="py-md-2 px-1 img-fluid"
               data-toggle="modal"
               data-target="#exampleModal2"
             />
@@ -192,25 +194,24 @@
                   <img
                     src="gfx/proposal_cards/Linnapark.png"
                     width="185"
-                    class="py-md-2 px-1"
+                    class="py-md-2 px-1 img-fluid"
                   />
                 </div>
                 <div class="flip-card-back">
                   <img
                     src="gfx/proposal_cards/Linnapark2.png"
                     width="185"
-                    class="py-md-2 px-1"
+                    class="py-md-2 px-1 img-fluid"
                     data-toggle="modal"
-                    data-target="#exampleModal2"      
+                    data-target="#exampleModal2"
                   />
                 </div>
               </div>
             </div>
             <!-- Card Flip TEST end -->
-
           </div>
 
-          <!-- Modal -->
+          <!-- White Card Modal inside of selectNewPropertyModal -->
           <div
             class="modal fade"
             id="exampleModal2"
@@ -257,6 +258,7 @@
               </div>
             </div>
           </div>
+          <!-- End of White Card Modal inside of selectNewPropertyModal -->
 
           <div class="modal-footer">
             <button
@@ -272,45 +274,82 @@
     </div>
     <!-- End of selectNewPropertyModal -->
 
-    <h3 class="py-3 text-center">
-      VILJANDI Elukeskkonna planeerimine. Rahvaarv 50000
-    </h3>
+    <!-- Start of Page header/title -->
+    <h4 class="py-3 text-center">
+      $cityName linna Elukeskkonna planeerimine. Rahvaarv linnas 50000
+    </h4>
+    <!-- End of Page header/title -->
 
-    <div class="container game-board">
-      <div class="row">
-        <img src="gfx/gameboard/maastik1.png" width="220" />
-        <img src="gfx/gameboard/maastik2.png" width="220" />
-        <img src="gfx/gameboard/maastik3.png" width="220" />
-        <img
-          src="gfx/gameboard/maastik4.png"
-          width="220"
-          data-toggle="modal"
-          data-target="#selectNewPropertyModal"
-        />
-        <img src="gfx/gameboard/maastik5.png" width="220" />
+    <!-- Start of Gameboard properties -->
+    <div class="d-flex flex-sm-row">
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik1.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
       </div>
-
-      <div class="row">
-        <img src="gfx/gameboard/maastik6.png" width="220" />
-        <img src="gfx/gameboard/maastik7.png" width="220" />
-        <img src="gfx/gameboard/maastik8.png" width="220" />
-        <img src="gfx/gameboard/maastik9.png" width="220" />
-        <img src="gfx/gameboard/maastik10.png" width="220" />
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik2.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
       </div>
-      <div class="row">
-        <img src="gfx/gameboard/maastik11.png" width="220" />
-        <img src="gfx/gameboard/maastik12.png" width="220" />
-        <img src="gfx/gameboard/maastik13.png" width="220" />
-        <img src="gfx/gameboard/maastik14.png" width="220" />
-        <img src="gfx/gameboard/maastik15.png" width="220" />
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik3.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
       </div>
-      <div class="row">
-        <img src="gfx/gameboard/maastik16.png" width="220" />
-        <img src="gfx/gameboard/maastik17.png" width="220" />
-        <img src="gfx/gameboard/maastik18.png" width="220" />
-        <img src="gfx/gameboard/maastik19.png" width="220" />
-        <img src="gfx/gameboard/maastik20.png" width="220" />
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik4.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik5.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
       </div>
     </div>
+    <div class="d-flex flex-sm-row">
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik6.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik7.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik8.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik9.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik10.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+    </div>
+    <div class="d-flex flex-sm-row">
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik11.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik12.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik13.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik14.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik15.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+    </div>
+    <div class="d-flex flex-sm-row">
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik16.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik17.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik18.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik19.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+      <div class="p-0">
+        <img src="gfx/gameboard/maastik20.png" class="img-fluid" data-toggle="modal" data-target="#selectNewPropertyModal" />
+      </div>
+    </div>
+    <!-- End of Gameboard properties -->
+
   </body>
 </html>

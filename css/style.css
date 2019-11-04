@@ -59,10 +59,10 @@
   transform: rotateY(-180deg);
   -webkit-transform: rotateY(-180deg);
 }
-@media (min-width: 1200px){
+/*@media (min-width: 1200px){
   .game-board .row img{
-    width: 210px;
-  }
+    width: 210px; 
+  }*/
 }
 
 .flip-vertical-fwd {
