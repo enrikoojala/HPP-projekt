@@ -11,6 +11,7 @@
     <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/qrcode.min.js"></script>
     <script src="js/main.js"></script>
 
     <title>Rollide valimine</title>
@@ -35,9 +36,6 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
             <a class="nav-link" href="#">Mängu juhend</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ettepaneku kaardid</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">KKK</a>
@@ -68,11 +66,7 @@
                 <h1 class="my-auto">1.</h1>
               </div>
               <div class="back border border-danger">
-                <img
-                  class="img-fluid"
-                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
-                  alt="Investori ruutkood"
-                />
+                <p class="qrcode" id="qrcode_0"></p>
                 <button
                   class="btn btn-md btn-primary"
                   data-toggle="modal"
@@ -137,11 +131,7 @@
                 <h1 class="my-auto">2.</h1>
               </div>
               <div class="back border border-danger">
-                <img
-                  class="img-fluid"
-                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
-                  alt="Sotsiaalnõuniku ruutkood"
-                />
+                <p class="qrcode" id="qrcode_1"></p>
                 <button
                   class="btn btn-md btn-primary"
                   data-toggle="modal"
@@ -207,11 +197,7 @@
                 <h1 class="my-auto">3.</h1>
               </div>
               <div class="back border border-danger">
-                <img
-                  class="img-fluid"
-                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
-                  alt="Looduskaitsebioloogi ruutkood"
-                />
+                <p class="qrcode" id="qrcode_2"></p>
                 <button
                   class="btn btn-md btn-primary"
                   data-toggle="modal"
@@ -279,11 +265,7 @@
                 <h1 class="my-auto">4.</h1>
               </div>
               <div class="back border border-danger">
-                <img
-                  class="img-fluid"
-                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
-                  alt="Kinnisvaraarendaja ruutkood"
-                />
+                <p class="qrcode" id="qrcode_3"></p>
                 <button
                   class="btn btn-md btn-primary"
                   data-toggle="modal"
@@ -348,11 +330,7 @@
                 <h1 class="my-auto">5.</h1>
               </div>
               <div class="back border border-danger">
-                <img
-                  class="img-fluid"
-                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
-                  alt="Koolidirektori ruutkood"
-                />
+                <p class="qrcode" id="qrcode_4"></p>
                 <button
                   class="btn btn-md btn-primary"
                   data-toggle="modal"
@@ -417,11 +395,7 @@
                 <h1 class="my-auto">6.</h1>
               </div>
               <div class="back border border-danger">
-                <img
-                  class="img-fluid"
-                  src="gfx/role_descriptions/qr_linnaplaneerija.png"
-                  alt="Aktiivse linnaelaniku ruutkood"
-                />
+                <p class="qrcode" id="qrcode_5"></p>
                 <button
                   class="btn btn-md btn-primary"
                   data-toggle="modal"
