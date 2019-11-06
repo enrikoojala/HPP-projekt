@@ -39,8 +39,8 @@ $(window).on('load',function(){
   function makeQRCode(item, index) {
     let qrcode = new QRCode(document.getElementById("qrcode_"+index), {
       text: item,
-      width: 200,
-      height: 200
+      width: 175,
+      height: 175
     });
   }
 });
