@@ -1,15 +1,12 @@
-// When the HTML Body element will load it will display a message in a modal box
-// $(window).on('load',function(){
-//     $('#introductionModal').modal('show');
-// });
+// Get Cityname and Population
+// var cityName = document.getElementById("cityName").value;
+// var population = document.getElementById("population").value;
 
-// Get Hostname and location
-
-// insert script here
-// https://www.w3schools.com/js/js_window_location.asp
 
 //QR-code/Ruutkoodi genereerimine
 //Siin saab saab 
+
+// Get Hostname and port
 
 let hostname = window.location.hostname;
 let port = window.location.port;
@@ -33,6 +30,9 @@ let urls = [i_url, sn_url, lkb_url, kva_url, kd_url, ake_url];
 
 //Peab olema on load muidu ei tööta.
 $(window).on('load',function(){
+
+  // When the HTML Body element will load it will display a message in a modal box
+  //$('#introductionModal').modal('show');
 
   urls.forEach(makeQRCode);
 

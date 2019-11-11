@@ -152,3 +152,15 @@
   color: white;
   transform: rotateY(180deg);
 }
+
+.vertical {
+  -ms-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -ms-transform-origin: left top 0;
+  -moz-transform-origin: left top 0;
+  -webkit-transform-origin: left top 0;
+  transform-origin: left top 0;
+  color: #4CAF50;
+  font-size: 100%;
