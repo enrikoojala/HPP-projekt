@@ -15,19 +15,22 @@ function countdown(seconds) {
     var current_seconds = seconds % 60;
     
     if(current_minutes < 3){
+      //Bootstrap roheline värv
       counter.style.color = "#28a745";
     }
     if(current_minutes < 2){
+      //Bootstrap kollane/oranz värv
       counter.style.color = "#ffc107";
     }
     if(current_minutes < 1){
+      //Bootstrap punane värv
       counter.style.color = "#dc3545";
     }
-
+    //Andmete välja näitamine html kujul
     counter.innerHTML = current_minutes + ":" + (current_seconds < 10 ? "0" : "") + current_seconds;
     if( seconds > 0 ) {
       setTimeout(tick, 1000);
-    } 
+    }
     if(seconds <= 0){
       $("#andmedTimerModal").modal("show");
     }
