@@ -1,224 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
-    <title>$cityName Elukeskkonna planeerimine</title>
-  </head>
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
 
-  <body>
-    <div class="container-fluid px-0">
-      <div class="row">
+  <title>$cityName Elukeskkonna planeerimine</title>
+</head>
 
-        <!-- Start of NAV -->
-        <div class="col-2 px-0">
-          <nav class="nav flex-column">
-            <a class="navbar-brand ml-3" href="#">
-              <img
-                src="gfx/hpp_logo.svg"
-                width="100"
-                height="100"
-                alt="hpp_logo"
-              />
-            </a>
-            <a class="nav-link active" href="#">Mängu juhend</a>
-            <a class="nav-link" href="#">Ettepaneku kaardid</a>
-            <a class="nav-link" href="#">KKK</a>
-            <a class="nav-link" href="#">Toetajad</a>
-          </nav>
+<body>
+
+  <!-- Start of introductionModal -->
+  <div class="modal fade" id="introductionModal" tabindex="-1" role="dialog" aria-labelledby="introductionModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="introductionModalLongTitle">
+            Lugupeetud Kohalviibijad!
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <!-- End of NAV -->
-
-        <!-- Start of Gameboard properties -->
-        <div class="col-7 px-0">
-          <div class="d-flex flex-row">
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik1.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik2.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik3.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik4.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik5.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-          </div>
-          <div class="d-flex flex-row">
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik6.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik7.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik8.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik9.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik10.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-          </div>
-          <div class="d-flex flex-row">
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik11.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik12.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik13.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik14.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik15.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-          </div>
-          <div class="d-flex flex-row">
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik16.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik17.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik18.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik19.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-            <div class="p-0">
-              <img
-                src="gfx/gameboard/maastik20.png"
-                class="img-fluid"
-                data-toggle="modal"
-                data-target="#selectNewPropertyModal"
-              />
-            </div>
-          </div>
+        <div class="modal-body">
+          <p class="text-justify">
+            Aitäh kõigile, kes te tänasele linnaplaneerimise koosolekule olete
+            tulnud.
+          </p>
+          <p class="text-justify">
+            Nagu te enda ees olevalt plaanilt võite näha, on meil linnas 3
+            planeerimata kinnistut, tähistatud nimega Tühermaa. Tänase
+            kokkusaamise eesmärk
+            <b>on nendele kolmele kinnistule otstarbe leidmine ning üldisemalt
+              linnale parima tulevikuplaani koostamine.</b>
+          </p>
         </div>
-        <!-- End of Gameboard properties -->
-
-        <!-- Start of right column -->
-        <div class="col px-0">
-            <p class="vertical ">ELUKESKKONNA PLANEERIMINE</p>
-          </div>
-          <!-- End of right column -->
-  
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-primary mx-auto">
+            OK
+          </button>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+  <!-- End of introductionModal -->
+
+  <!-- Start of selectNewPropertyModal -->
+  <div class="modal fade" id="selectNewPropertyModal" tabindex="-1" role="dialog"
+    aria-labelledby="selectNewPropertyModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="selectNewPropertyModalTitle">
+            Vali kinnistu, mida ehitada Tühermaa asemele
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="d-flex flex-row">
+
+            <!-- Card Flip Parkla -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/parkla1.png" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/parkla2.png" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Parkla -->
+
+            <!-- Card Flip Jäätmejaam -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/jaatmejaam1.png" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/jaatmejaam2.png" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Jäätmejaam -->
+
+            <!-- Card Flip Valge kaart -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/valge_kaart1.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/valge_kaart2.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Valge kaart -->
+
+            <!-- Card Flip Tehas #1-->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/tehas1.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/tehas2.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Tehas #1 -->
+
+          </div>
+
+          <div class="d-flex flex-row">
+
+            <!-- Card Flip Tehas #2 -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/tehas1.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/tehas2.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Tehas #2 -->
+
+            <!-- Card Flip Tehase parkla -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/tehase_parkla1.png" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/tehase_parkla2.png" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Tehase parkla -->
+
+            <!-- Card Flip Sotsiaalmaja -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/sotsiaalmaja1.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/sotsiaalmaja2.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Sotsiaalmaja -->
+
+            <!-- Card Flip Looduskaitseala -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/looduskaitseala1.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/looduskaitseala2.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Looduskaitseala -->
+          </div>
+
+          <div class="d-flex flex-row">
+
+            <!-- Card Flip Parkla -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/parkla1.png" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/parkla2.png" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Parkla -->
+
+            <!-- Card Flip Jäätmejaam -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/jaatmejaam1.png" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/jaatmejaam2.png" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Jäätmejaam -->
+
+            <!-- Card Flip Valge kaart -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/valge_kaart1.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/valge_kaart2.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Valge kaart -->
+
+            <!-- Card Flip Tehas #1-->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="gfx/proposal_cards/tehas1.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+                <div class="flip-card-back">
+                  <img src="gfx/proposal_cards/tehas2.png" width="185" class="py-md-2 px-1 img-fluid" />
+                </div>
+              </div>
+            </div>
+            <!-- End of Card Flip Tehas #1 -->
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- White Card Modal inside of selectNewPropertyModal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel2">
+              Kirjuta lühidalt siia oma idee
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">
+              Salvesta
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of White Card Modal inside of selectNewPropertyModal -->
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">
+        Vali
+      </button>
+    </div>
+  </div>
+  </div>
+  <!-- End of selectNewPropertyModal -->
+
+  <div class="container-fluid mx-2 mt-2">
+    <div class="row">
+
+      <!-- Start of NAV -->
+      <div class="col-2 px-0">
+        <nav class="nav flex-column">
+          <a class="navbar-brand ml-3" href="#">
+            <img src="gfx/hpp_logo.svg" width="100" height="100" alt="hpp_logo" />
+          </a>
+          <a class="nav-link active" href="#">Mängu juhend</a>
+          <a class="nav-link" href="#">Ettepaneku kaardid</a>
+          <a class="nav-link" href="#">KKK</a>
+          <a class="nav-link" href="#">Toetajad</a>
+        </nav>
+      </div>
+      <!-- End of NAV -->
+
+      <!-- Start of Gameboard properties -->
+      <div class="col-7 px-0">
+        <div class="d-flex flex-row">
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik1.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik2.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik3.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik4.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik5.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik6.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik7.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik8.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik9.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik10.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik11.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik12.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik13.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik14.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik15.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik16.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik17.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik18.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik19.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+          <div class="p-0">
+            <img src="gfx/gameboard/maastik20.png" class="img-fluid" data-toggle="modal"
+              data-target="#selectNewPropertyModal" />
+          </div>
+        </div>
+      </div>
+      <!-- End of Gameboard properties -->
+
+      <!-- Start of right column -->
+      <div class="col px-0">
+        <p class="vertical ">ELUKESKKONNA PLANEERIMINE</p>
+      </div>
+      <!-- End of right column -->
+
+    </div>
+  </div>
+</body>
+
 </html>
