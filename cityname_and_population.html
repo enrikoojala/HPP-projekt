@@ -266,6 +266,47 @@
     <!-- End of navbar -->
 
     <div class="container-fluid">
+
+      <!-- Modal timer -->
+      <div
+      class="modal fade andmedTimerModal"
+      id="andmedTimerModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="andmedTimerModal"
+      aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header alert-danger">
+              <h5 class="modal-title ml-2">Aeg otsas!</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p class="text-justify">
+                  Sisestage linnanimi ja rahvaarv kui pole seda veel teinud
+                </p>
+              </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary mx-auto"
+                data-dismiss="modal"
+              >
+                Sulge
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <br />
       <div class="row">
         <div class="col-md-4">
@@ -276,46 +317,12 @@
           />
         </div>
         <div class="col-md-4 my-auto">
+          
+
           <h4 class="text-center">
             Leppige kokku ja andke linnale nimi ning rahvaarv.
           </h4>
           <h5 id="timer_1" class="text-center">3:00</h5>
-          <script type="text/javascript">
-            function countdown(seconds) {
-              seconds = parseInt(sessionStorage.getItem("seconds")) || seconds;
-              //Kui on sekundeid mälus siis sessionStorage.getItem() need üles leiab. 
-              //Kui pole, siis hakkab originaal 180 sekundit alla poole tiksuma.
-              //Kui timer on jooksnud 0:00, siis refresh alustab uuesti otsast peale.
-
-              function tick() {
-                seconds--;
-                //sessionStorage salvestab hetke aja mällu (alles olevad sekundid) võib teha refresh, minna edasi teistele lehtedele või tagasi. 
-                //Veebileht tuleb kinni panna, et kaotada mälus olev seis.
-                sessionStorage.setItem("seconds", seconds)
-                var counter = document.getElementById("timer_1");
-                var current_minutes = parseInt(seconds/60);
-                var current_seconds = seconds % 60;
-                
-                if(current_minutes < 3){
-                  counter.style.color = "green";
-                }
-                if(current_minutes < 2){
-                  counter.style.color = "orange";
-                }
-                if(current_minutes < 1){
-                  counter.style.color = "red";
-                }
-
-                counter.innerHTML = current_minutes + ":" + (current_seconds < 10 ? "0" : "") + current_seconds;
-                if( seconds > 0 ) {
-                  setTimeout(tick, 1000);
-                } 
-              }
-              tick();
-            }
-
-            countdown(180);
-          </script>
           <br />
           <form class="form-data" action="city_planner.html">
           <!-- <form class="form-data" action="city_planner.html" method="POST"> -->
