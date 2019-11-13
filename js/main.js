@@ -1,5 +1,7 @@
 $(window).on('load',function(){
-  
+    // When the HTML Body element will load it will display introductionModal
+    // $('#introductionModal').modal('show');
+
   //Hetkel andmete timer. Tuleb teha funktsioonides muudatusi kui tahame teha dünaamilisemaks teiste lehtede jaoks ka VB.
   function countdown(seconds) {
     seconds = parseInt(sessionStorage.getItem("seconds")) || seconds;
@@ -55,11 +57,4 @@ $(window).on('load',function(){
 // if (port = 5500) {
 //   port = ':' + port;
 // }
-
-//Peab olema on load muidu ei tööta.
-
-
-  // When the HTML Body element will load it will display a message in a modal box
-  //$('#introductionModal').modal('show');
-
 });
