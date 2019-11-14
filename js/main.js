@@ -1,12 +1,18 @@
 $(window).on('load',function(){
   // Get hostname, port and set urls.
+  let hostname = location.hostname;
+  let port = location.port;
 
-  //host nimi koos pordiga
-  let host = location.host;
+  //lokaal testimise jaoks.
+  if (port = 5500) {
+    port = ':' + port;
+  }
+
   //Hetke asukoht URL'is.
   let x = location.href;
-  let cname_popUrl = "http://" + host + "/cityname_and_population.html";
-  let gameboardURL = "http://" + host + "/gameboard.html";
+  
+  let cname_popUrl = "http://" + hostname + port + "/cityname_and_population.html";
+  let gameboardURL = "http://" + hostname + port + "/gameboard.html";
 
   // When the HTML Body element will load it will display introductionModal
   // $('#introductionModal').modal('show');
