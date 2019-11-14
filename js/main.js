@@ -51,7 +51,7 @@ $(window).on('load',function(){
     }
     countdown(180);
   }
-  
+
   if (fileName == "city_planner.html") {
       document.getElementById("rollidLinnaplaneerijaID").innerHTML = "www." + location.hostname + "/rollid/linnaplaneerija/";
   }
@@ -59,6 +59,16 @@ $(window).on('load',function(){
   if (fileName == "gameboard.html") {
     // When the HTML Body element will load gameboard.html, introductionModal will be displayed
     $('#introductionModal').modal('show');
+
+    //Linnanime ja rahvaarvu kättesaamine.
+    let cityNameShow = sessionStorage.getItem("cityName");
+    let populationShow = sessionStorage.getItem("population");
+
+    document.getElementById("cityName").innerHTML = cityNameShow;
+    document.getElementById("population").innerHTML = populationShow;
+
+    document.getElementsByTagName("Title")[0].text = cityNameShow + " Elukeskkonna planeerimine";
+
   }
 
 
