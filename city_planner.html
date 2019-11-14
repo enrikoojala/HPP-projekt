@@ -67,14 +67,21 @@
                 <h3 class="py-2">Linnaplaneerija</h3>
                 <p class="py-2" id="qrcode"></p>
                 <script type="text/javascript">
-                    new QRCode(document.getElementById("qrcode"), "http://127.0.0.1:5500/rollid/linnaplaneerija/");
+                  // new QRCode(document.getElementById("qrcode"), "http://127.0.0.1:5500/rollid/linnaplaneerija/");
+                  new QRCode(
+                    document.getElementById('qrcode'),
+                    location.protocol +
+                      '//' +
+                      location.host +
+                      '/rollid/linnaplaneerija/'
+                  );
                 </script>
                 <button
-                class="btn btn-md btn-primary"
-                data-toggle="modal"
-                data-target="#lookLinkModal"
+                  class="btn btn-md btn-primary"
+                  data-toggle="modal"
+                  data-target="#lookLinkModal"
                 >
-                Vaata linki
+                  Vaata linki
                 </button>
               </div>
             </div>
@@ -104,9 +111,11 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <a href="rollid/linnaplaneerija" target="_blank"
-                    >www.darkside.ee/rollid/linnaplaneerija/</a
-                  >
+                  <a
+                    href="rollid/linnaplaneerija"
+                    target="_blank"
+                    id="rollidLinnaplaneerijaID"
+                  ></a>
                 </div>
 
                 <div class="modal-footer">
