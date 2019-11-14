@@ -1,21 +1,18 @@
 $(window).on('load',function(){
-  // Get hostname, port and set urls.
-  let hostname = location.hostname;
-  let port = location.port;
 
-  //lokaal testimise jaoks.
-  if (port = 5500) {
-    port = ':' + port;
-  }
+  // When the HTML Body element will load it will display introductionModal
+  $('#introductionModal').modal('show');
+
+
+  console.log("Host: " + location.hostname);
+  console.log("Port: " + location.port);
+  console.log("Protocol: " + location.protocol);
 
   //Hetke asukoht URL'is.
   let x = location.href;
   
-  let cname_popUrl = "http://" + hostname + port + "/cityname_and_population.html";
-  let gameboardURL = "http://" + hostname + port + "/gameboard.html";
-
-  // When the HTML Body element will load it will display introductionModal
-  // $('#introductionModal').modal('show');
+  let cname_popUrl = location.protocol + location.hostname + location.port + "/cityname_and_population.html";
+  let gameboardURL = location.protocol + location.hostname + location.port + "/gameboard.html";
 
   //Hetkel andmete timer. Tuleb teha funktsioonides muudatusi kui tahame teha dünaamilisemaks teiste lehtede jaoks ka VB.
   //kui urlid kattuvad, siis läheb kood tööle, cityname_and_population.html lehel.
