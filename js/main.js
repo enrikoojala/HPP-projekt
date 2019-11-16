@@ -1,8 +1,24 @@
 $(window).on('load', function() {
-  // console.log("Protocol: " + location.protocol);
-  // console.log("Host: " + location.hostname);
-  // console.log("Port: " + location.port);
-  // console.log("URL: " + location.href);
+
+  // Get Hostname and port
+  let host = location.host;
+  let protocol = location.protocol;
+  
+  let linnaplaneerijaPath = "/rollid/linnaplaneerija"
+  let investorPath = "/rollid/investor/";
+  let sotsiaalnounikPath = "/rollid/sotsiaalnounik/";
+  let looduskaitsebioloogPath = "/rollid/looduskaitsebioloog/";
+  let kinnisvaraarendajaPath = "/rollid/kinnisvaraarendaja/";
+  let koolidirektorPath = "/rollid/koolidirektor/";
+  let aktiivneLinnaelanikPath = "/rollid/aktiivne_linnaelanik/";
+
+  let linnaplaneerijaUrl = protocol + "//" + host + linnaplaneerijaPath;
+  let investorUrl = protocol + "//" + host + investorPath;
+  let sotsiaalnounikUrl = protocol + "//" + host + sotsiaalnounikPath;
+  let looduskaitsebioloogUrl = protocol + "//" + host + looduskaitsebioloogPath;
+  let kinnisvaraarendajaUrl = protocol + "//" + host + kinnisvaraarendajaPath;
+  let koolidirektorUrl = protocol + "//" + host + koolidirektorPath;
+  let aktiivneLinnaelanikUrl = protocol + "//" + host + aktiivneLinnaelanikPath;
 
   var fileName = window.location.pathname.substring(
     window.location.pathname.lastIndexOf('/') + 1
@@ -69,8 +85,29 @@ $(window).on('load', function() {
   }
 
   if (fileName == 'city_planner.html') {
-    document.getElementById('rollidLinnaplaneerijaID').innerHTML =
-      'www.' + location.hostname + '/rollid/linnaplaneerija/';
+    document.getElementById('rollidLinnaplaneerijaID').innerHTML = linnaplaneerijaUrl;
+  }
+
+  if (fileName == 'roles.html') {
+
+    document.getElementById('rollidInvestorID').innerHTML = investorUrl;
+    document.getElementById('rollidSotsiaalnounikID').innerHTML = sotsiaalnounikUrl;
+    document.getElementById('rollidLooduskaitsebioloogID').innerHTML = looduskaitsebioloogUrl;
+    document.getElementById('rollidKinnisvaraarendajaID').innerHTML = kinnisvaraarendajaUrl;
+    document.getElementById('rollidKoolidirektorID').innerHTML = koolidirektorUrl;
+    document.getElementById('rollidAktiivneLinnaelanikID').innerHTML = aktiivneLinnaelanikUrl;
+
+    let urls = [investorUrl, sotsiaalnounikUrl, looduskaitsebioloogUrl, kinnisvaraarendajaUrl, koolidirektorUrl, aktiivneLinnaelanikUrl];
+
+    urls.forEach(makeQRCode);
+
+    function makeQRCode(item, index) {
+      let qrcode = new QRCode(document.getElementById("qrcode_"+index), {
+        text: item,
+        width: 175,
+        height: 175
+      });
+    }
   }
 
   if (fileName == 'gameboard.html') {
