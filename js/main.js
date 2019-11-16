@@ -40,18 +40,18 @@ $(window).on('load', function() {
         let current_minutes = parseInt(seconds / 60);
         let current_seconds = seconds % 60;
 
-        if (current_minutes < 3) {
-          //Bootstrap roheline värv
-          counter.style.color = '#28a745';
-        }
-        if (current_minutes < 2) {
-          //Bootstrap kollane/oranz värv
-          counter.style.color = '#ffc107';
-        }
-        if (current_minutes < 1) {
-          //Bootstrap punane värv
-          counter.style.color = '#dc3545';
-        }
+        // if (current_minutes < 3) {
+        //   //Bootstrap roheline värv
+        //   counter.style.color = '#28a745';
+        // }
+        // if (current_minutes < 2) {
+        //   //Bootstrap kollane/oranz värv
+        //   counter.style.color = '#ffc107';
+        // }
+        // if (current_minutes < 1) {
+        //   //Bootstrap punane värv
+        //   counter.style.color = '#dc3545';
+        // }
 
         //Andmete välja näitamine html kujul
         counter.innerHTML =
@@ -68,7 +68,7 @@ $(window).on('load', function() {
       }
       tick();
     }
-    countdown(180);
+    countdown(20);
 
     
     //Linnanime ja rahvaarvu salvestamine
