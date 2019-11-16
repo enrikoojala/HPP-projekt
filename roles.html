@@ -13,7 +13,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/qrcode.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/qr.js"></script>
 
     <title>Rollide valimine</title>
   </head>
@@ -68,6 +67,17 @@
               <div class="back border border-danger">
                 <h5 class="pt-2">Investor</h5>
                 <p id="qrcode_0"></p>
+                <script type="text/javascript">
+                  // new QRCode(document.getElementById("qrcode"), "http://127.0.0.1:5500/rollid/linnaplaneerija/");
+                  new QRCode(
+                    document.getElementById('qrcode_0'),
+                    location.protocol +
+                      '//' +
+                      location.host +
+                      '/rollid/investor/'
+                  );
+                </script>
+
                 <button
                   class="btn btn-md btn-primary"
                   data-toggle="modal"
