@@ -17,7 +17,6 @@
   </head>
 
   <body>
-
     <!-- Modal mangu juhend -->
     <div
       class="modal fade juhendModel-lg"
@@ -56,7 +55,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Modal KKK -->
     <div
       class="modal fade KKKModel-lg"
@@ -145,7 +144,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Modal mangu toetajad -->
     <div
       class="modal fade toetajadModel-lg"
@@ -198,38 +197,31 @@
             ><img src="gfx/sponsors/EU.svg" alt="toetaja" class="mb-3"
           /></a>
           <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-primary mx-auto"
-                data-dismiss="modal"
-              >
-                Sulge
-              </button>
-            </div>
+            <button
+              type="button"
+              class="btn btn-primary mx-auto"
+              data-dismiss="modal"
+            >
+              Sulge
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Start of navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">
-        <img style="width:60px" src="gfx/hpp_logo.svg" />
-      </a>
-
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Start of NAV -->
+        <div class="col-2 px-0">
+          <nav class="nav flex-column">
+            <a class="navbar-brand ml-3" href="index.html">
+              <img
+                src="gfx/hpp_logo.svg"
+                width="100"
+                height="100"
+                alt="hpp_logo"
+              />
+            </a>
             <a
               class="nav-link"
               href=""
@@ -237,34 +229,109 @@
               data-target=".juhendModel-lg"
               >Mängu juhend</a
             >
-          </li>
-          <li class="nav-item">
             <a
               class="nav-link"
-              href=""
+              href="#"
               data-toggle="modal"
               data-target=".KKKModel-lg"
               >KKK</a
             >
-          </li>
-          <li class="nav-item">
             <a
               class="nav-link"
-              href=""
+              href="#"
               data-toggle="modal"
               data-target=".toetajadModel-lg"
               >Toetajad</a
             >
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- End of navbar -->
+          </nav>
+        </div>
+        <!-- End of NAV -->
 
-    <div class="container">
+        <!-- Start of Content -->
+        <div class="col-10">
+
+          <!-- Start of Title -->
+          <div class="row mx-0 my-4">
+            <h3 class="text-center">Lauamäng "Elukeskkonna planeerimine"</h3>
+          </div>
+          <!-- End of Title -->
+
+          <!-- Start of 1. row -->
+          <div class="row mb-3">
+
+            <div class="col">
+              <p class="text-justify">
+                <strong>
+                  Mängu eesmärk on läbi rollimängu analüüsida ja õppida
+                  keskkonna mõju olulisust tervisele ja heaolule
+                </strong>
+              </p>
+
+              <a
+              class="btn btn-primary btn-lg my-4"
+              href="cityname_and_population.html"
+              role="button"
+              >Alusta mängu!</a>
+
+              <p class="text-justify">
+                Loodud lauamäng simuleerib linnaplaneerimise koosolekut ning on
+                koostatud nii, et seda saab mängida nii ühe (7 inimest) kui
+                mitme erineva (x*7 inimest) laudkonnaga samaaegselt. Kui
+                mängijate arv täpselt seitsmega ei jagu, siis saab osades
+                laudkondades mõningaid rolle dubleerida (nt kaks
+                sotisaalnõunikku, looduskaitsebioloogi või aktiivset
+                linnaelanikku).
+              </p>
+            </div>
+
+            <picture class="col">
+              <img
+                class="img-fluid rounded"
+                src="gfx/gameplay/Game_1.jpg"
+                height=""
+                alt=""
+              />
+            </picture>
+
+          </div>
+          <!-- End of 1. row -->
+
+          <!-- Start of 2. row -->
+          <div class="row mt-3">
+            
+            <picture class="col">
+              <img
+                class="img-fluid rounded"
+                src="gfx/gameplay/Game_3.jpg"
+                height=""
+                alt=""
+              />
+            </picture>
+
+            <div class="col">
+              <p class="text-justify">
+                Kuna mängu peamine eesmärk on tekkiv arutelu, siis on
+                mängujärgne tagasiside ning mõttevahetus äärmiselt olulised.
+                Õppejõu ülesanne on juhtida koostatud linnaplaani või
+                linnaplaanide tutvustamist ning küsida õppeainega seotud
+                täpsustavaid küsimusi. Oluline on välja tuua, et tervise ja
+                heaolu edendamine on midagi, mida mõjutavad paljud ametnikud
+                väga erinevatest valdkondadest ning kodanikud, kes esindavad
+                laia ampluaad teadmisi. Seega on tervisedenduse alased teadmised
+                olulised kõigile. Täpne fookus tagasiside ringis on õppejõu
+                valida ning sõltub
+              </p>
+            </div>
+          </div>
+          <!-- End of 2. row -->
+
+        </div>
+        <!-- End of Content -->
+
+      </div>
+    </div>
+    <!-- <div class="container">
       <h3 class="text-center">Lauamäng "Elukeskkonna planeerimine"</h3>
-      <br />
-      <br />
       <div class="row">
         <div class="col-md-6 my-auto">
           <p class="text-justify">
@@ -318,8 +385,6 @@
           />
         </div>
       </div>
-      <br />
-      <br />
       <div class="row">
         <a
           class="btn btn-primary btn-lg mx-auto"
@@ -329,7 +394,6 @@
         >
       </div>
       <br />
-    </div>
-
+    </div> -->
   </body>
 </html>

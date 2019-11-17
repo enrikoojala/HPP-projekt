@@ -1,7 +1,7 @@
-/* No scrollbars */
+/* No scrollbars
 ::-webkit-scrollbar {
   display: none;
-}
+} */
 /* Pointer */
 .pointer {
   cursor: pointer;
