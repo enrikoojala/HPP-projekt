@@ -4,28 +4,211 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/qrcode.min.js"></script>
+    <script src="js/main.js"></script>
+
+
     <title>Linna nimi | Rahva arv | Laua juht</title>
   </head>
+
   <body>
-    <header></header>
-    <main class="container">
+    
+    <header class="bg-white">
+      <section class="jumbotron text-center py-5">
+        <div class="container-fluid">
+          <h1 class="jumbotron-heading">
+            Lauamäng "Elukeskkonna planeerimine"
+          </h1>
+          <p class="lead text-muted">
+            Enne kui asute linnaplaneerimise juurde, palun leppige kokku ja
+            kirjutage üles järgmiste küsimuste vastused
+          </p>
+
+          <p>Aega kokkuleppe saavutamiseks on</p>
+
+          <h5 id="timer_1" class="text-center">0:00</h5>
+        </div>
+      </section>
+    </header>
+
+    <main class="container-fluid">
       <div class="row">
-        <div class="col-md-6">
+
+        <!-- Cityname and population form in Card -->
+        <div class="col-5">
           <div class="card">
             <div class="card-body">
-              This is some text within a card body.
+              <div class="row">
+                <div class="col-6 mx-auto">
+                  <h5 class="card-title">
+                    Mis on linna nimi ja kui palju inimesi elab linnas?
+                  </h5>
+
+                  <form class="form-data" action="city_planner.html">
+                    <!-- <form class="form-data" action="city_planner.html" method="POST"> -->
+                    <label for="citynameLabel">Linna nimi</label>
+                    <input
+                      type="text"
+                      id="cityName"
+                      class="form-control"
+                      placeholder=""
+                      autofocus=""
+                    />
+                    <!-- <input
+                          type="text"
+                          id="cityName"
+                          name="cityName"
+                          class="form-control"
+                          placeholder="Linnanimi"
+                          required
+                          autofocus
+                        /> -->
+                    <br />
+                    <label for="populationLabel">Rahva arv</label>
+                    <input
+                      type="number"
+                      id="population"
+                      class="form-control"
+                      placeholder=""
+                    />
+                    <!-- <input
+                          type="number"
+                          id="population"
+                          name="population"
+                          class="form-control"
+                          placeholder="Rahvaarv"
+                          required
+                        /> -->
+                    <br />
+                    <button
+                      class="btn btn-lg btn-primary btn-block"
+                      type="submit"
+                      id="submit"
+                      onclick="saveData()"
+                    >
+                      Edasi
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <!-- End of Cityname and population form in Card -->
+
+        <!-- Arrow pointing right -->
+        <div class="col-2 align-self-center">
+          <i class="fas fa-chevron-right fa-7x"></i>
+        </div>
+        <!-- End of Arrow pointing right -->
+
+        <!-- Right Cityplanner Card with Card Flip/Rotate -->
+        <div class="col-5">
           <div class="card">
-            <div class="card-body">
-              This is some text within a card body.
+            <div class="card-body mx-auto">
+
+                <div class="col-md-12">
+                    <h3>
+                      Palun valige eestkõneleja, kui on valitud siis vajutage kaardi
+                      peale.
+                    </h3>
+                    <br />
+                    <br />
+                    <label class="card-flip-role">
+                      <input class="input-hide" type="checkbox" />
+                      <div class="card-flip">
+                        <div class="front border border-success"></div>
+                        <div class="back border border-primary">
+                          <h3 class="py-2">Linnaplaneerija</h3>
+                          <p class="py-2" id="qrcode"></p>
+                          <script type="text/javascript">
+                            // new QRCode(document.getElementById("qrcode"), "http://127.0.0.1:5500/rollid/linnaplaneerija/");
+                            new QRCode(
+                              document.getElementById('qrcode'),
+                              location.protocol +
+                                '//' +
+                                location.host +
+                                '/rollid/linnaplaneerija/'
+                            );
+                          </script>
+                          <button
+                            class="btn btn-md btn-primary"
+                            data-toggle="modal"
+                            data-target="#lookLinkModal"
+                          >
+                            Vaata linki
+                          </button>
+                        </div>
+                      </div>
+                    </label>
+                    <!-- Modal -->
+                    <div
+                      class="modal fade"
+                      id="lookLinkModal"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="lookLinkModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="lookLinkModalLabel">
+                              Linnaplaneerija isikukaardi link
+                            </h5>
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <a
+                              href="rollid/linnaplaneerija"
+                              target="_blank"
+                              id="rollidLinnaplaneerijaID"
+                            ></a>
+                          </div>
+          
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-primary mx-auto"
+                              data-dismiss="modal"
+                            >
+                              Sulge
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+
             </div>
           </div>
         </div>
+        <!-- End of Right Cityplanner Card with Card Flip/Rotate -->
+
       </div>
     </main>
+
     <footer></footer>
   </body>
 </html>

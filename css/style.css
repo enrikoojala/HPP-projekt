@@ -9,13 +9,16 @@
 .navbar-light .navbar-nav .active > .nav-link {
   color: #007bff;
 }
-.form-data {
+/* .form-data {
   width: 100%;
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
-}
-.card-role {
+} */
+
+
+/* Start of Card Rotate/Flip CSS */
+.card-flip-role {
   -webkit-perspective: 1000px;
   perspective: 1000px;
   -webkit-transform-style: preserve-3d;
@@ -24,12 +27,12 @@
   height: 400px;
   cursor: pointer;
 }
-.col-md-4 .card-role {
+.col-md-4 .card-flip-role {
   width: 225px;
   height: 300px;
 }
 
-.card {
+.card-flip {
   position: relative;
   height: 100%;
   width: 100%;
@@ -40,7 +43,7 @@
   z-index: 20;
 }
 
-.card div {
+.card-flip div {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -50,11 +53,11 @@
   backface-visibility: hidden;
   border-radius: 2px;
 }
-.card .front {
+.card-flip .front {
   display: flex;
   flex-direction: column;
 }
-.card .back {
+.card-flip .back {
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
@@ -63,7 +66,7 @@
   display: none;
 }
 
-:checked + .card {
+:checked + .card-flip {
   transform: rotateY(-180deg);
   -webkit-transform: rotateY(-180deg);
 }
