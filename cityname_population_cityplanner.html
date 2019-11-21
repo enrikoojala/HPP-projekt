@@ -6,12 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="css/style.css" />
 
     <script src="js/jquery-3.3.1.slim.min.js"></script>
@@ -20,7 +14,7 @@
     <script src="js/qrcode.min.js"></script>
     <script src="js/main.js"></script>
 
-    <title>Linna nimi | Rahva arv | Laua juht</title>
+    <title>Linna nimi | Rahva arv | Laua eestkõneleja</title>
   </head>
 
   <body>
@@ -65,7 +59,6 @@
         </div>
       </div>
     </div>
-    <!-- End of Modal mangu juhend -->
 
     <!-- Modal KKK -->
     <div
@@ -155,7 +148,6 @@
         </div>
       </div>
     </div>
-    <!-- End of Modal KKK -->
 
     <!-- Modal mangu toetajad -->
     <div
@@ -220,7 +212,40 @@
         </div>
       </div>
     </div>
-    <!-- End of Modal mangu toetajad -->
+
+    <!-- Modal andmedTimerModal -->
+    <div
+    class="modal fade andmedTimerModal"
+    id="andmedTimerModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="andmedTimerModal"
+    aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header alert-danger">
+            <h5 class="modal-title mx-auto">Tähelepanu!</h5>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+              <p>Kokkuleppimise aeg sai läbi!</p>
+              <p>Sisestage linnanimi ja rahvaarv</p>
+              <p>Laua eestkõneleja võtab kaardi</p>
+              </p>
+            </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary mx-auto"
+              data-dismiss="modal"
+            >
+              Sulge
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- lookLinkModal Modal -->
     <div
@@ -269,7 +294,6 @@
         </div>
       </div>
     </div>
-    <!-- End of lookLinkModal Modal -->
 
     <!-- End of MODALS -->
 
@@ -287,7 +311,7 @@
       </section>
     </header>
 
-    <main class="container-fluid mt-4">
+    <main class="container-fluid mt-4 p-0">
       <div class="row">
 
         <!-- Start of NAV -->
@@ -322,9 +346,14 @@
                 data-target=".toetajadModel-lg"
                 >Toetajad</a
               >
+              <p 
+                class="px-3 py-2 m-0" 
+                id="timer_1"
+              >3:00
+              </p>
+
             </nav>
         </div>
-        <!-- End of NAV -->
           
         <!-- Cityname and population form in Card -->
         <div class="col-4">
@@ -387,13 +416,6 @@
             </div>
           </div>
         </div>
-        <!-- End of Cityname and population form in Card -->
-
-        <!-- Arrow pointing right -->
-        <div class="col-0 align-self-center mx-auto px-0">
-          <i class="fas fa-chevron-right fa-7x"></i>
-        </div>
-        <!-- End of Arrow pointing right -->
 
         <!-- Right Cityplanner Card with Card Flip/Rotate -->
         <div class="col-4">
@@ -428,13 +450,23 @@
             </div>
           </div>
         </div>
-        <!-- End of Right Cityplanner Card with Card Flip/Rotate -->
         
-        <div class="col-1"></div>
+        <div class="col-2"></div>
 
       </div>
     </main>
 
-    <footer></footer>
+    <footer>
+        <div class="row">
+            <a
+              class="btn btn-primary btn-lg mx-auto my-3 w-25"
+              href="roles.html"
+              role="button"
+              >Edasi</a
+            >
+          </div>
+    
+    </footer>
+
   </body>
 </html>
