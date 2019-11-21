@@ -20,14 +20,261 @@
     <script src="js/qrcode.min.js"></script>
     <script src="js/main.js"></script>
 
-
     <title>Linna nimi | Rahva arv | Laua juht</title>
   </head>
 
   <body>
     
+    <!-- MODALS -->
+
+    <!-- Modal mangu juhend -->
+    <div
+      class="modal fade juhendModel-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="juhendModel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title ml-2">Mängu juhend</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <img
+            src="gfx/juhend_est.svg"
+            onerror="this.onerror=null; this.src='image.png'"
+          />
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary mx-auto"
+              data-dismiss="modal"
+            >
+              Sulge
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Modal mangu juhend -->
+
+    <!-- Modal KKK -->
+    <div
+      class="modal fade KKKModel-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="KKKModel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title ml-2">Korduma kippuvad küsimused</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="text-justify mx-4 my-4">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+              Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+              Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris
+              massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti
+              sociosqu ad litora torquent per conubia nostra, per inceptos
+              himenaeos. Curabitur sodales ligula in libero. Sed dignissim
+              lacinia nunc.
+            </p>
+
+            <p>
+              Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque
+              sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin
+              ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis
+              vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula
+              lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel,
+              tincidunt sed, euismod in, nibh. Quisque volutpat condimentum
+              velit. Class aptent taciti sociosqu ad litora torquent per conubia
+              nostra, per inceptos himenaeos.
+            </p>
+
+            <p>
+              Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque
+              adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi.
+              Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus
+              consequat imperdiet. Vestibulum sapien. Proin quam. Etiam
+              ultrices. Suspendisse in justo eu magna luctus suscipit. Sed
+              lectus. Integer euismod lacus luctus magna. Quisque cursus, metus
+              vitae pharetra auctor, sem massa mattis sem, at interdum magna
+              augue eget diam.
+            </p>
+
+            <p>
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+              posuere cubilia Curae; Morbi lacinia molestie dui. Praesent
+              blandit dolor. Sed non quam. In vel mi sit amet augue congue
+              elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec
+              lacus nunc, viverra nec, blandit vel, egestas et, augue.
+              Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim.
+              Curabitur sit amet mauris. Morbi in dui quis est pulvinar
+              ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.
+            </p>
+
+            <p>
+              Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi.
+              Quisque nisl felis, venenatis tristique, dignissim in, ultrices
+              sit amet, augue. Proin sodales libero eget ante. Nulla quam.
+              Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac,
+              ultricies eu, pede. Ut orci risus, accumsan porttitor, cursus
+              quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at
+              pede suscipit sodales.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary mx-auto"
+              data-dismiss="modal"
+            >
+              Sulge
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Modal KKK -->
+
+    <!-- Modal mangu toetajad -->
+    <div
+      class="modal fade toetajadModel-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="toetajadModel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title ml-2">Toetajad</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.tlu.ee/haapsalu"
+            ><img src="gfx/sponsors/TLU_HK.svg" alt="toetaja" class="mt-3"
+          /></a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.metropolia.fi/en"
+            ><img src="gfx/sponsors/metropolia.svg" alt="toetaja"
+          /></a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.hkhk.edu.ee/"
+            ><img src="gfx/sponsors/HKHK.svg" alt="toetaja"
+          /></a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.interreg-baltic.eu/"
+            ><img src="gfx/sponsors/interreg.svg" alt="toetaja"
+          /></a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.struktuurifondid.ee/"
+            ><img src="gfx/sponsors/EU.svg" alt="toetaja" class="mb-3"
+          /></a>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary mx-auto"
+              data-dismiss="modal"
+            >
+              Sulge
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Modal mangu toetajad -->
+
+    <!-- lookLinkModal Modal -->
+    <div
+      class="modal fade"
+      id="lookLinkModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="lookLinkModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="lookLinkModalLabel">
+              Linnaplaneerija isikukaardi link
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <a
+              href="rollid/linnaplaneerija"
+              target="_blank"
+              id="rollidLinnaplaneerijaID"
+            ></a>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary mx-auto"
+              data-dismiss="modal"
+            >
+              Sulge
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of lookLinkModal Modal -->
+
+    <!-- End of MODALS -->
+
     <header class="bg-white">
-      <section class="jumbotron text-center py-5">
+      <section class="jumbotron text-center py-5 mb-0">
         <div class="container-fluid">
           <h1 class="jumbotron-heading">
             Lauamäng "Elukeskkonna planeerimine"
@@ -36,34 +283,69 @@
             Enne kui asute linnaplaneerimise juurde, palun leppige kokku ja
             kirjutage üles järgmiste küsimuste vastused
           </p>
-
-          <p>Aega kokkuleppe saavutamiseks on</p>
-
-          <h5 id="timer_1" class="text-center">0:00</h5>
         </div>
       </section>
     </header>
 
-    <main class="container-fluid">
+    <main class="container-fluid mt-4">
       <div class="row">
 
+        <!-- Start of NAV -->
+        <div class="col-2 px-0">
+            <nav class="nav flex-column">
+              <!-- <a class="navbar-brand ml-3" href="index.html">
+                <img
+                  src="gfx/hpp_logo.svg"
+                  width="100"
+                  height="100"
+                  alt="hpp_logo"
+                />
+              </a> -->
+              <a
+                class="nav-link"
+                href=""
+                data-toggle="modal"
+                data-target=".juhendModel-lg"
+                >Juhend</a
+              >
+              <a
+                class="nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target=".KKKModel-lg"
+                >KKK</a
+              >
+              <a
+                class="nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target=".toetajadModel-lg"
+                >Toetajad</a
+              >
+            </nav>
+        </div>
+        <!-- End of NAV -->
+          
         <!-- Cityname and population form in Card -->
-        <div class="col-5">
-          <div class="card">
+        <div class="col-4">
+          <div class="card h-100">
+              <div class="card-header text-center">
+                  <strong>Mis on linna nimi ja kui palju inimesi elab linnas?</strong>
+                </div>
             <div class="card-body">
               <div class="row">
-                <div class="col-6 mx-auto">
-                  <h5 class="card-title">
+                <div class="col-8 mx-auto">
+                  <!-- <h5 class="card-title text-center mb-4">
                     Mis on linna nimi ja kui palju inimesi elab linnas?
-                  </h5>
+                  </h5> -->
 
-                  <form class="form-data" action="city_planner.html">
+                  <form class="form-data my-4" action="city_planner.html">
                     <!-- <form class="form-data" action="city_planner.html" method="POST"> -->
-                    <label for="citynameLabel">Linna nimi</label>
+                    <label for="citynameLabel" class="mb-0">Linna nimi</label>
                     <input
                       type="text"
                       id="cityName"
-                      class="form-control"
+                      class="form-control mb-4"
                       placeholder=""
                       autofocus=""
                     />
@@ -76,12 +358,11 @@
                           required
                           autofocus
                         /> -->
-                    <br />
-                    <label for="populationLabel">Rahva arv</label>
+                    <label for="populationLabel" class="mb-0">Rahva arv</label>
                     <input
                       type="number"
                       id="population"
-                      class="form-control"
+                      class="form-control mb-5"
                       placeholder=""
                     />
                     <!-- <input
@@ -92,14 +373,13 @@
                           placeholder="Rahvaarv"
                           required
                         /> -->
-                    <br />
                     <button
-                      class="btn btn-lg btn-primary btn-block"
+                      class="btn btn-lg btn-primary btn-block mb-4"
                       type="submit"
                       id="submit"
                       onclick="saveData()"
                     >
-                      Edasi
+                      Salvesta
                     </button>
                   </form>
                 </div>
@@ -110,101 +390,47 @@
         <!-- End of Cityname and population form in Card -->
 
         <!-- Arrow pointing right -->
-        <div class="col-2 align-self-center">
+        <div class="col-0 align-self-center mx-auto px-0">
           <i class="fas fa-chevron-right fa-7x"></i>
         </div>
         <!-- End of Arrow pointing right -->
 
         <!-- Right Cityplanner Card with Card Flip/Rotate -->
-        <div class="col-5">
+        <div class="col-4">
           <div class="card">
-            <div class="card-body mx-auto">
+              <div class="card-header text-center">
+                  <strong>Kellest saab Teie laua eestkõneleja?</strong>
+                </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-8 mx-auto">
 
-                <div class="col-md-12">
-                    <h3>
-                      Palun valige eestkõneleja, kui on valitud siis vajutage kaardi
-                      peale.
-                    </h3>
-                    <br />
-                    <br />
-                    <label class="card-flip-role">
-                      <input class="input-hide" type="checkbox" />
-                      <div class="card-flip">
-                        <div class="front border border-success"></div>
-                        <div class="back border border-primary">
-                          <h3 class="py-2">Linnaplaneerija</h3>
-                          <p class="py-2" id="qrcode"></p>
-                          <script type="text/javascript">
-                            // new QRCode(document.getElementById("qrcode"), "http://127.0.0.1:5500/rollid/linnaplaneerija/");
-                            new QRCode(
-                              document.getElementById('qrcode'),
-                              location.protocol +
-                                '//' +
-                                location.host +
-                                '/rollid/linnaplaneerija/'
-                            );
-                          </script>
-                          <button
-                            class="btn btn-md btn-primary"
-                            data-toggle="modal"
-                            data-target="#lookLinkModal"
-                          >
-                            Vaata linki
-                          </button>
-                        </div>
-                      </div>
-                    </label>
-                    <!-- Modal -->
-                    <div
-                      class="modal fade"
-                      id="lookLinkModal"
-                      tabindex="-1"
-                      role="dialog"
-                      aria-labelledby="lookLinkModalLabel"
-                      aria-hidden="true"
-                    >
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="lookLinkModalLabel">
-                              Linnaplaneerija isikukaardi link
-                            </h5>
-                            <button
-                              type="button"
-                              class="close"
-                              data-dismiss="modal"
-                              aria-label="Close"
-                            >
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <a
-                              href="rollid/linnaplaneerija"
-                              target="_blank"
-                              id="rollidLinnaplaneerijaID"
-                            ></a>
-                          </div>
-          
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-primary mx-auto"
-                              data-dismiss="modal"
-                            >
-                              Sulge
-                            </button>
-                          </div>
-                        </div>
+                  <label class="card-flip-role">
+                    <input class="input-hide" type="checkbox" />
+                    <div class="card-flip">
+                      <div class="front border border-success"></div>
+                      <div class="back border border-primary">
+                        <h3 class="py-2">Linnaplaneerija</h3>
+                        <p class="py-2" id="qrcode_0"></p>
+                        <button
+                          class="btn btn-md btn-primary"
+                          data-toggle="modal"
+                          data-target="#lookLinkModal"
+                        >
+                          Vaata aadressi
+                        </button>
                       </div>
                     </div>
-                  </div>
-          
+                  </label>
 
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <!-- End of Right Cityplanner Card with Card Flip/Rotate -->
+        
+        <div class="col-1"></div>
 
       </div>
     </main>

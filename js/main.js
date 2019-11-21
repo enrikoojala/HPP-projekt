@@ -88,8 +88,24 @@ $(window).on('load', function() {
     document.getElementById('rollidLinnaplaneerijaID').innerHTML = linnaplaneerijaUrl;
   }
 
-  if (fileName == 'roles.html') {
+  if (fileName == 'cityname_population_cityplanner.html') {
+    document.getElementById('rollidLinnaplaneerijaID').innerHTML = linnaplaneerijaUrl;
 
+    let urls = [linnaplaneerijaUrl];
+
+    urls.forEach(makeQRCode);
+
+    function makeQRCode(item, index) {
+      let qrcode = new QRCode(document.getElementById("qrcode_"+index), {
+        text: item,
+        width: 175,
+        height: 175
+      });
+    }
+
+  }
+
+  if (fileName == 'roles.html') {
     document.getElementById('rollidInvestorID').innerHTML = investorUrl;
     document.getElementById('rollidSotsiaalnounikID').innerHTML = sotsiaalnounikUrl;
     document.getElementById('rollidLooduskaitsebioloogID').innerHTML = looduskaitsebioloogUrl;
