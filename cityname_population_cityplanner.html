@@ -17,7 +17,7 @@
     <title>Linna nimi | Rahva arv | Laua eestkõneleja</title>
   </head>
 
-  <body>
+  <body id="element" class="bg-white">
     
     <!-- MODALS -->
 
@@ -316,47 +316,42 @@
 
         <!-- Start of NAV -->
         <div class="col-2 px-0">
-            <nav class="nav flex-column">
-              <!-- <a class="navbar-brand ml-3" href="index.html">
-                <img
-                  src="gfx/hpp_logo.svg"
-                  width="100"
-                  height="100"
-                  alt="hpp_logo"
-                />
-              </a> -->
-              <a
-                class="nav-link"
+            <nav class="nav flex-column bg-light h-100 text-center menu">
+              <p class="menuTitle py-3 my-0 text-uppercase">Lingid</p>
+              <li class="nav-item">
+                <a
+                  class="nav-link py-3"
+                  href=""
+                  data-toggle="modal"
+                  data-target=".juhendModel-lg"
+                  >Juhend</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link py-3"
+                  href=""
+                  data-toggle="modal"
+                  data-target=".KKKModel-lg"
+                  >KKK</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a
+                class="nav-link py-3"
                 href=""
-                data-toggle="modal"
-                data-target=".juhendModel-lg"
-                >Juhend</a
-              >
-              <a
-                class="nav-link"
-                href="#"
-                data-toggle="modal"
-                data-target=".KKKModel-lg"
-                >KKK</a
-              >
-              <a
-                class="nav-link"
-                href="#"
                 data-toggle="modal"
                 data-target=".toetajadModel-lg"
                 >Toetajad</a
-              >
-              <p 
-                class="px-3 py-2 m-0" 
-                id="timer_1"
-              >3:00
-              </p>
+                >
+              </li>
 
             </nav>
         </div>
           
         <!-- Cityname and population form in Card -->
-        <div class="col-4">
+        <div class="col">
           <div class="card h-100">
               <div class="card-header text-center">
                   <strong>Mis on linna nimi ja kui palju inimesi elab linnas?</strong>
@@ -418,7 +413,7 @@
         </div>
 
         <!-- Right Cityplanner Card with Card Flip/Rotate -->
-        <div class="col-4">
+        <div class="col pl-0">
           <div class="card">
               <div class="card-header text-center">
                   <strong>Kellest saab Teie laua eestkõneleja?</strong>
@@ -450,14 +445,25 @@
             </div>
           </div>
         </div>
-        
-        <div class="col-2"></div>
+
+        <!-- Right Timer -->
+        <div class="col-2 px-0">
+          <nav class="nav flex-column bg-light h-100 text-center menu">
+            <p class="menuTitle py-3 my-0 text-uppercase">Timer</p>
+            <p class="py-3 my-0">Aega jäänud kokkuleppe saavutamiseks</p>           
+            <p 
+              class="px-3 p-0 m-0 h3" 
+              id="timer_1"
+            > 3:00
+            </p>
+            </nav>
+          </div>
 
       </div>
     </main>
 
     <footer>
-        <div class="row">
+        <div class="row mx-0">
             <a
               class="btn btn-primary btn-lg mx-auto my-3 w-25"
               href="roles.html"

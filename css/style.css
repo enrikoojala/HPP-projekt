@@ -1,14 +1,35 @@
-/* No scrollbars
+/* No scrollbars */
 ::-webkit-scrollbar {
   display: none;
-} */
+}
 /* Pointer */
 .pointer {
   cursor: pointer;
 }
-.navbar-light .navbar-nav .active > .nav-link {
-  color: #007bff;
+
+.menuTitle {
+  background-color: #555;
+  color: white;
 }
+
+.menu li a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+.menu li a:hover {
+  background-color: #555;
+  color: white;
+}
+.menu li a:active {
+  background-color: #555;
+  color: white;
+}
+.nav-link {
+  transition:0.2s;
+}
+
 /* .form-data {
   width: 100%;
   max-width: 330px;

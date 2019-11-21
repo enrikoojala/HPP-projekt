@@ -4,6 +4,8 @@ $(window).on('load', function() {
   let host = location.host;
   let protocol = location.protocol;
   
+
+  // Player Role Card path
   let linnaplaneerijaPath = "/rollid/linnaplaneerija"
   let investorPath = "/rollid/investor/";
   let sotsiaalnounikPath = "/rollid/sotsiaalnounik/";
@@ -12,6 +14,9 @@ $(window).on('load', function() {
   let koolidirektorPath = "/rollid/koolidirektor/";
   let aktiivneLinnaelanikPath = "/rollid/aktiivne_linnaelanik/";
 
+
+  // Create Player Role URL base on
+  // protocol, host and Player Role Card path
   let linnaplaneerijaUrl = protocol + "//" + host + linnaplaneerijaPath;
   let investorUrl = protocol + "//" + host + investorPath;
   let sotsiaalnounikUrl = protocol + "//" + host + sotsiaalnounikPath;
@@ -20,16 +25,22 @@ $(window).on('load', function() {
   let koolidirektorUrl = protocol + "//" + host + koolidirektorPath;
   let aktiivneLinnaelanikUrl = protocol + "//" + host + aktiivneLinnaelanikPath;
 
+
+  // Get the filename of HTML files
   var fileName = window.location.pathname.substring(
     window.location.pathname.lastIndexOf('/') + 1
   );
 
+
+  // If in a specific HTML page, then run script
   if (fileName == 'cityname_and_population.html') {
+
     function countdown(seconds) {
       seconds = parseInt(sessionStorage.getItem('seconds')) || seconds;
       //Kui on sekundeid mälus siis sessionStorage.getItem() need üles leiab.
       //Kui pole, siis hakkab originaal 180 sekundit alla poole tiksuma.
       //Kui timer on jooksnud 0:00, siis refresh alustab uuesti otsast peale.
+
 
       function tick() {
         seconds--;
@@ -82,12 +93,17 @@ $(window).on('load', function() {
 
       return true;
     }
+
   }
 
+
+  // If in a specific HTML page, then run script
   if (fileName == 'city_planner.html') {
     document.getElementById('rollidLinnaplaneerijaID').innerHTML = linnaplaneerijaUrl;
   }
 
+
+  // If in a specific HTML page, then run script
   if (fileName == 'cityname_population_cityplanner.html') {
     document.getElementById('rollidLinnaplaneerijaID').innerHTML = linnaplaneerijaUrl;
     let urls = [linnaplaneerijaUrl];
@@ -149,6 +165,7 @@ $(window).on('load', function() {
 
   }
 
+  // If in a specific HTML page, then run script
   if (fileName == 'roles.html') {
     document.getElementById('rollidInvestorID').innerHTML = investorUrl;
     document.getElementById('rollidSotsiaalnounikID').innerHTML = sotsiaalnounikUrl;
@@ -170,6 +187,7 @@ $(window).on('load', function() {
     }
   }
 
+  // If in a specific HTML page, then run script
   if (fileName == 'gameboard.html') {
     // When the HTML Body element will load gameboard.html, introductionModal will be displayed
     $('#introductionModal').modal('show');
@@ -232,6 +250,9 @@ $(window).on('load', function() {
       }
       countdown(20);
   }
+
+
+  // IS THIS CODE NEEDED?
 
   // //Hetke asukoht URL'is.
   // let x = location.href;
