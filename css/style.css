@@ -72,7 +72,6 @@
   text-align: center;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 2px;
 }
 .card-flip .front {
   display: flex;
@@ -202,6 +201,54 @@ ul.thumbnails.image_picker_selector li .thumbnail img {
 ul.thumbnails.image_picker_selector li .thumbnail.selected {
   background: #0088cc;
 }
-
-
+/* Style the back side */
+/*Linnaplaneerija*/
+.card-back-1 {
+  border-style: solid;
+  border-color: #68add6;
+  border-width: 10px;
+  border-radius: 20px;
+}
+/*Investor*/
+.card-back-2 {
+  border-style: solid;
+  border-color: #add6c2;
+  border-width: 10px;
+  border-radius: 20px;
+}
+/*Sotsiaalnounik*/
+.card-back-3 {
+  border-style: solid;
+  border-color: #ab7fa6;
+  border-width: 10px;
+  border-radius: 20px;
+}
+/*Linnaplaneerija*/
+.card-back-4 {
+  border-style: solid;
+  border-color: #a0d6e2;
+  border-width: 10px;
+  border-radius: 20px;
+}
+/*Kinnisvaraarendaja*/
+.card-back-5 {
+  border-style: solid;
+  border-color: #c5c5c7;
+  border-width: 10px;
+  border-radius: 20px;
+}
+/*Koolidirektor*/
+.card-back-6 {
+  border-style: solid;
+  border-color: #f6c987;
+  border-width: 10px;
+  border-radius: 20px;
+}
+/*Aktiivne linnaelannik*/
+.card-back-7 {
+  border-style: solid;
+  border-color: #af90bd;
+  border-width: 10px;
+  border-radius: 20px;
+}
 
