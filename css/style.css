@@ -156,7 +156,6 @@
 /* Vertical aligned text */
 .vertical {
   color: #4caf50;
-  font-size: 5ex;
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }

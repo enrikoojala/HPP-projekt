@@ -560,7 +560,7 @@
               </div>
               <!-- End of Card Flip Tehas #1 -->
             </div>
-            <!-- End of First row -->
+            <!-- End of First row -->    
 
             <!-- Second row -->
             <div class="d-flex flex-row">
@@ -899,144 +899,60 @@
       </div>
     </div>
 
-    <!-- Modal halfTimeModal -->
-    <div
-    class="modal fade halfTimeModal"
-    id="halfTimeModal"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="halfTimeModal"
-    aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header alert-warning">
-            <h5 class="modal-title ml-2">Pool aeg!</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <p class="text-justify">
-                Head osalejad, annan teada, et teie linn on tervist edendav linn. See tähendab, et teile on oluline:
-                <br>
-                – Hea õhu-, toidu- ning joogivee kvaliteet
-                <br>
-                – Vähene müra ja valgusreostus
-                <br>
-                – Head võimalused aktiivseks füüsiliseks tegevuseks
-                <br>
-                – Keskkonnahoid ja keskkonnasõbralik jäätmekäitlus
-              </p>
-            </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary mx-auto"
-              data-dismiss="modal"
-            >
-              Sulge
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal gameOverModal -->
-    <div
-    class="modal fade gameOverModal"
-    id="gameOverModal"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="gameOverModal"
-    aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header alert-danger">
-            <h5 class="modal-title ml-2">Aeg otsas!</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <p class="text-justify">
-                Linnaplaneerija, kes tutvustab koostatud plaani ning teeb sellest kõigile ülevaatliku kokkuvõtte.
-              </p>
-            </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary mx-auto"
-              data-dismiss="modal"
-            >
-              Sulge
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="container-fluid mx-2 mt-2">
       <div class="row">
         <!-- Start of NAV -->
-        <div class="col-2 px-0">
-          <nav class="nav flex-column">
-            <a class="navbar-brand ml-3" href="index.html">
-              <img
-                src="gfx/hpp_logo.svg"
-                width="100"
-                height="100"
-                alt="hpp_logo"
-              />
-            </a>
-            <a
-              class="nav-link"
+        <div class="col-2 pl-0 pr-3">
+          <nav class="nav flex-column bg-light h-100 text-center menu">
+            <p class="menuTitle py-3 my-0 text-uppercase">Lingid</p>
+            <li class="nav-item">
+              <a
+                class="nav-link py-3"
+                href="index.html"
+                >Avalehele</a
+              >
+            <li class="nav-item">
+              <a
+                class="nav-link py-3"
+                href=""
+                data-toggle="modal"
+                data-target=".juhendModel-lg"
+                >Juhend</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link py-3"
+                href=""
+                data-toggle="modal"
+                data-target=".KKKModel-lg"
+                >KKK</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a
+              class="nav-link py-3"
               href=""
-              data-toggle="modal"
-              data-target=".juhendModel-lg"
-              >Mängu juhend</a
-            >
-            <a
-              class="nav-link"
-              href=""
-              data-toggle="modal"
-              data-target="#proposalCardsModal"
-              >Ettepaneku kaardid</a
-            >
-            <a
-              class="nav-link"
-              href="#"
-              data-toggle="modal"
-              data-target=".KKKModel-lg"
-              >KKK</a
-            >
-            <a
-              class="nav-link"
-              href="#"
               data-toggle="modal"
               data-target=".toetajadModel-lg"
               >Toetajad</a
-            >
-            <p class="px-3 py-2 m-0" id="cityName"></p>
-            <p class="px-3 py-2 m-0" id="population"></p>
-            <p class="px-3 py-2 m-0" id="timer_2">2:00</p>
-          </nav>
-        </div>
-        <!-- End of NAV -->
+              >
+            </li>
+
+            <p class="menuTitle py-3 my-0 mt-4 text-uppercase">Info</p>
+            <p class="px-3 py-2 m-0">Linna nimi: <label id="cityName"></label></p>
+            <p class="px-3 py-2 m-0">Rahva arv: <label id="population"></label></p>
+
+            <p class="menuTitle py-3 my-0 mt-4 text-uppercase">Timer</p>
+            <p class="px-3 py-2 m-0">Aega mängu lõpuni: <label id="timer_2">45:00</label></p>
+
+            <button type="button" id="toggle" class=" mt-4">Aktiveeri täisekraan</button>
+
+      </div>
 
         <!-- Start of Gameboard properties -->
-        <div class="col-7 px-0">
+        <div class="col px-0">
           <div class="d-flex flex-row">
             <div class="p-0">
               <img
@@ -1209,11 +1125,12 @@
         <!-- End of Gameboard properties -->
 
         <!-- Start of right column -->
-        <div class="col px-0">
-          <p class="vertical ">ELUKESKKONNA PLANEERIMINE</p>
+        <div class="col-3 px-0">
+          <p><h1 class="vertical">ELUKESKKONNA PLANEERIMINE</h1></p>
         </div>
         <!-- End of right column -->
       </div>
     </div>
+
   </body>
 </html>
