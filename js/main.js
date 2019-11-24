@@ -136,6 +136,7 @@ $(window).on('load', function() {
     // When the HTML Body element will load gameboard.html, introductionModal will be displayed
     $('#introductionModal').modal('hide'); // to activate, change to show
 
+
     //Linnanime ja rahvaarvu kättesaamine.
     let cityNameShow = sessionStorage.getItem('cityName');
     let populationShow = sessionStorage.getItem('population');
