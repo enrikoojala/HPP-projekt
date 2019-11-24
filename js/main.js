@@ -134,7 +134,7 @@ $(window).on('load', function() {
   // If in a specific HTML page, then run script
   if (fileName == 'gameboard.html') {
     // When the HTML Body element will load gameboard.html, introductionModal will be displayed
-    $('#introductionModal').modal('show');
+    $('#introductionModal').modal('hide'); // to activate, change to show
 
     //Linnanime ja rahvaarvu kättesaamine.
     let cityNameShow = sessionStorage.getItem('cityName');

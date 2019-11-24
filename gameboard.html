@@ -104,13 +104,16 @@
                     <img
                       src="gfx/proposal_cards/parkla1.png"
                       class="py-md-2 px-1 img-fluid pointer"
+                      id="parkla1"
                     />
                   </div>
                   <div class="flip-card-back">
                     <img
                       src="gfx/proposal_cards/parkla2.png"
                       class="py-md-2 px-1 img-fluid pointer"
-                    />
+                      id="parkla2"
+                      onClick="elementID(this.id)"
+/>
                   </div>
                 </div>
               </div>
@@ -123,13 +126,37 @@
                     <img
                       src="gfx/proposal_cards/jaatmejaam1.png"
                       class="py-md-2 px-1 img-fluid pointer"
+                      id="jaatmejaam1"
                     />
                   </div>
                   <div class="flip-card-back">
                     <img
                       src="gfx/proposal_cards/jaatmejaam2.png"
                       class="py-md-2 px-1 img-fluid pointer"
+                      id="jaatmejaam2"
+                      onClick="elementID(this.id)"
                     />
+                    <script>
+
+                      function elementID(clicked_id) {
+
+                        let selectNewProperty = clicked_id;
+                        console.log("Valitud on ID " + selectNewProperty);
+                        document.getElementById(clicked_id.replace(/.$/,"1")).className = "py-md-2 px-1 img-fluid pointer border border-danger";
+                        document.getElementById(clicked_id).className = "py-md-2 px-1 img-fluid pointer border border-danger";
+
+                        return selectNewProperty;
+
+                      }
+
+                      function changeSelectedProperty() {
+
+                        document.getElementById('maastik5').src = "gfx/proposal_cards/jaatmejaam1.png";
+                        console.log("Valitud kinnistu on muudetud Jäätmejaamaks");
+
+                      }
+
+                      </script>
                   </div>
                 </div>
               </div>
@@ -356,6 +383,7 @@
               type="button"
               class="btn btn-primary mx-auto"
               data-dismiss="modal"
+              onClick="changeSelectedProperty()"
             >
               Vali
             </button>
@@ -989,6 +1017,7 @@
             <div class="p-0">
               <img
                 src="gfx/gameboard/maastik5.png"
+                id="maastik5"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
