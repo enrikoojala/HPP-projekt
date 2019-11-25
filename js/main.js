@@ -129,6 +129,52 @@ $(window).on('load', function() {
         height: 175
       });
     }
+    
+    function countdown(seconds) {
+      seconds = parseInt(sessionStorage.getItem('Timer 3')) || seconds;
+      //Kui on sekundeid mälus siis sessionStorage.getItem() need üles leiab.
+      //Kui pole, siis hakkab originaal 180 sekundit alla poole tiksuma.
+      //Kui timer on jooksnud 0:00, siis refresh alustab uuesti otsast peale.
+
+      function tick() {
+        seconds--;
+        //sessionStorage salvestab hetke aja mällu (alles olevad sekundid) võib teha refresh, minna edasi teistele lehtedele või tagasi.
+        //Veebileht tuleb kinni panna, et kaotada mälus olev seis.
+        sessionStorage.setItem('Timer 3', seconds);
+        let counter = document.getElementById('timer_3');
+        let current_minutes = parseInt(seconds / 60);
+        let current_seconds = seconds % 60;
+
+        // if (current_minutes < 3) {
+        //   //Bootstrap roheline värv
+        //   counter.style.color = '#28a745';
+        // }
+        // if (current_minutes < 2) {
+        //   //Bootstrap kollane/oranz värv
+        //   counter.style.color = '#ffc107';
+        // }
+        // if (current_minutes < 1) {
+        //   //Bootstrap punane värv
+        //   counter.style.color = '#dc3545';
+        // }
+
+        //Andmete välja näitamine html kujul
+        counter.innerHTML =
+          current_minutes +
+          ':' +
+          (current_seconds < 10 ? '0' : '') +
+          current_seconds;
+        if (seconds > 0) {
+          setTimeout(tick, 1000);
+        }
+        if (seconds <= 0) {
+          $('#kaardiValimiseTimerModal').modal('show');
+        }
+      }
+      tick();
+    }
+    countdown(20);
+
   }
 
   // If in a specific HTML page, then run script
@@ -194,38 +240,38 @@ $(window).on('load', function() {
       tick();
     }
     countdown(20);
-  }
 
-  // Activate fullscreen / Deactivate fullscreen
-  // Button needs to be a link !!!
-  if (document.fullscreenEnabled) {
-    var btn = document.getElementById('toggle');
+    // Activate fullscreen / Deactivate fullscreen
+    // Button needs to be a link !!!
+    if (document.fullscreenEnabled) {
+      var btn = document.getElementById('toggle');
 
-    btn.addEventListener(
-      'click',
-      function(event) {
+      btn.addEventListener(
+        'click',
+        function(event) {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+          } else {
+            document.exitFullscreen();
+          }
+        },
+        false
+      );
+
+      document.addEventListener('fullscreenchange', function(event) {
+        console.log(event);
+
         if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
+          btn.innerText = 'Aktiveeri täisekraan';
         } else {
-          document.exitFullscreen();
+          btn.innerText = 'Deaktiveeri täisekraan';
         }
-      },
-      false
-    );
+      });
 
-    document.addEventListener('fullscreenchange', function(event) {
-      console.log(event);
-
-      if (!document.fullscreenElement) {
-        btn.innerText = 'Aktiveeri täisekraan';
-      } else {
-        btn.innerText = 'Deaktiveeri täisekraan';
-      }
-    });
-
-    document.addEventListener('fullscreenerror', function(event) {
-      console.log(event);
-    });
+      document.addEventListener('fullscreenerror', function(event) {
+        console.log(event);
+      });
+    }
   }
-  
+
 });
