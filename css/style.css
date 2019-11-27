@@ -200,16 +200,8 @@ ul.thumbnails.image_picker_selector li .thumbnail img {
 ul.thumbnails.image_picker_selector li .thumbnail.selected {
   background: #0088cc;
 }
-
-/*Linnaplaneerija*/
-.card-back-1 {
-  border-style: solid;
-  border-color: #68add6;
-  border-width: 10px;
-  border-radius: 20px;
-}
+/*cards*/
 .card-front-1 img {
-
   position:absolute;
   top: 0px;
   left: 0px;
@@ -219,7 +211,17 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   border-width: 10px;
   border-radius: 20px;
 }
-.card-front-1 p {
+.card-front-2 img {
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  max-width: 300px;
+  border-style: solid;
+  border-color: #616b6f;
+  border-width: 10px;
+  border-radius: 20px;
+}
+.card-front-2 p {
   position: absolute;
   top: -3%;
   left: 33%;
@@ -227,6 +229,24 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   font-weight: 700;
   color: #f7f7f7;
   -webkit-text-stroke: 2px black;
+  opacity: 90%;
+}
+.card-front-1 p {
+  position: absolute;
+  top: -4%;
+  left: 27%;
+  font-size: 182px;
+  font-weight: 700;
+  color: #f7f7f7;
+  -webkit-text-stroke: 2px black;
+  opacity: 90%;
+}
+/*Linnaplaneerija*/
+.card-back-1 {
+  border-style: solid;
+  border-color: #68add6;
+  border-width: 10px;
+  border-radius: 20px;
 }
 /*Investor*/
 .card-back-2 {
