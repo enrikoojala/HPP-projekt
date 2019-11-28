@@ -202,24 +202,26 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
 }
 /*cards*/
 .card-front-1 img {
-  position:absolute;
-  top: 0px;
-  left: 0px;
-  max-width: 300px;
-  border-style: solid;
-  border-color: #616b6f;
-  border-width: 10px;
-  border-radius: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 225px;
+    border-style: solid;
+    border-color: #616b6f;
+    border-width: 10px;
+    border-radius: 20px;
+    height: 300px;
 }
 .card-front-2 img {
-  position:absolute;
-  top: 0px;
-  left: 0px;
-  max-width: 300px;
-  border-style: solid;
-  border-color: #616b6f;
-  border-width: 10px;
-  border-radius: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    border-style: solid;
+    border-color: #616b6f;
+    border-width: 10px;
+    border-radius: 20px;
+    height: 400px
 }
 .card-front-2 p {
   position: absolute;
