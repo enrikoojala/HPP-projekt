@@ -274,4 +274,102 @@ $(window).on('load', function() {
     }
   }
 
+
+  // If in a specific HTML page, then run script
+  if (fileName == 'gameboardTest.html') {
+    // When the HTML Body element will load gameboard.html, introductionModal will be displayed
+    $('#introductionModal').modal('hide'); // to activate, change to show
+
+
+    //Linnanime ja rahvaarvu kättesaamine.
+    let cityNameShow = sessionStorage.getItem('cityName');
+    let populationShow = sessionStorage.getItem('population');
+
+    document.getElementById('cityName').innerHTML = cityNameShow;
+    document.getElementById('population').innerHTML = populationShow;
+
+    document.getElementsByTagName('Title')[0].text =
+      cityNameShow + ' Elukeskkonna planeerimine';
+
+    function countdown(seconds) {
+      seconds = parseInt(sessionStorage.getItem('Timer 2')) || seconds;
+      //Kui on sekundeid mälus siis sessionStorage.getItem() need üles leiab.
+      //Kui pole, siis hakkab originaal 180 sekundit alla poole tiksuma.
+      //Kui timer on jooksnud 0:00, siis refresh alustab uuesti otsast peale.
+
+      function tick() {
+        seconds--;
+        //sessionStorage salvestab hetke aja mällu (alles olevad sekundid) võib teha refresh, minna edasi teistele lehtedele või tagasi.
+        //Veebileht tuleb kinni panna, et kaotada mälus olev seis.
+        sessionStorage.setItem('Timer 2', seconds);
+        let timer_2 = document.getElementById('timer_2');
+        let current_minutes = parseInt(seconds / 60);
+        let current_seconds = seconds % 60;
+
+        // if (current_minutes < 3) {
+        //   //Bootstrap roheline värv
+        //   timer_2.style.color = '#28a745';
+        // }
+        // if (current_minutes < 2) {
+        //   //Bootstrap kollane/oranz värv
+        //   timer_2.style.color = '#ffc107';
+        // }
+        // if (current_minutes < 1) {
+        //   //Bootstrap punane värv
+        //   timer_2.style.color = '#dc3545';
+        // }
+
+        //Andmete välja näitamine html kujul
+        timer_2.innerHTML =
+          current_minutes +
+          ':' +
+          (current_seconds < 10 ? '0' : '') +
+          current_seconds;
+        if (seconds > 0) {
+          setTimeout(tick, 1000);
+        }
+        if (seconds == 10) {
+          $('#halfTimeModal').modal('show');
+        }
+        if (seconds <= 0) {
+          $('#gameOverModal').modal('show');
+        }
+      }
+      tick();
+    }
+    countdown(20);
+
+    // Activate fullscreen / Deactivate fullscreen
+    // Button needs to be a link !!!
+    if (document.fullscreenEnabled) {
+      var btn = document.getElementById('toggle');
+
+      btn.addEventListener(
+        'click',
+        function(event) {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+          } else {
+            document.exitFullscreen();
+          }
+        },
+        false
+      );
+
+      document.addEventListener('fullscreenchange', function(event) {
+        console.log(event);
+
+        if (!document.fullscreenElement) {
+          btn.innerText = 'Aktiveeri täisekraan';
+        } else {
+          btn.innerText = 'Deaktiveeri täisekraan';
+        }
+      });
+
+      document.addEventListener('fullscreenerror', function(event) {
+        console.log(event);
+      });
+    }
+  }
+
 });

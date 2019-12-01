@@ -29,7 +29,9 @@
 .nav-link {
   transition:0.2s;
 }
-
+.border-danger {
+  border-width:3px !important;
+}
 /* .form-data {
   width: 100%;
   max-width: 330px;
