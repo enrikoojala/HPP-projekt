@@ -956,9 +956,12 @@
 
       function selectBorder(ClickedIDValue){
 
-        var ClickedIDValue2 = ClickedIDValue.replace(/.$/,"1");
-        document.getElementById(ClickedIDValue2).className = "py-md-2 px-1 img-fluid pointer border border-danger";
-        document.getElementById(ClickedIDValue).className = "py-md-2 px-1 img-fluid pointer border border-danger";
+          var ClickedIDValue2 = ClickedIDValue.replace(/.$/,"1");
+
+          document.getElementById(ClickedIDValue2).className = "py-md-2 px-1 img-fluid pointer border border-danger";
+          
+          document.getElementById(ClickedIDValue).className = "py-md-2 px-1 img-fluid pointer border border-danger";
+
       
       }
 
@@ -966,10 +969,21 @@
       function selectBorderReset(ClickedIDValue){
 
         let clickedImgIDShowOLD = sessionStorage.getItem('ClickedImgID');
-        var clickedImgIDShowOLD2 = clickedImgIDShowOLD.replace(/.$/,"1");
-        document.getElementById(clickedImgIDShowOLD).className = "py-md-2 px-1 img-fluid pointer";
-        document.getElementById(clickedImgIDShowOLD2).className = "py-md-2 px-1 img-fluid pointer";
-      
+
+        if (clickedImgIDShowOLD == null) {
+
+          let clickedImgIDShowOLD = 0;
+        
+        } else {
+
+          var clickedImgIDShowOLD2 = clickedImgIDShowOLD.replace(/.$/,"1");
+          
+          document.getElementById(clickedImgIDShowOLD).className = "py-md-2 px-1 img-fluid pointer";
+          
+          document.getElementById(clickedImgIDShowOLD2).className = "py-md-2 px-1 img-fluid pointer";
+        
+        }
+
       }
 
 
