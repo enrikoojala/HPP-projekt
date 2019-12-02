@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="#" type="image/x-icon">
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -68,7 +69,6 @@
         </div>
       </div>
     </div>
-    <!-- End of introductionModal -->
 
     <!-- Start of selectNewPropertyModal -->
     <div
@@ -413,7 +413,6 @@
         </div>
       </div>
     </div>
-    <!-- End of selectNewPropertyModal -->
 
     <!-- White Card Modal inside of selectNewPropertyModal -->
     <div
@@ -462,7 +461,6 @@
         </div>
       </div>
     </div>
-    <!-- End of White Card Modal inside of selectNewPropertyModal -->
 
     <!-- Modal mangu juhend -->
     <div
@@ -919,13 +917,12 @@
             </div>
           </div>
         </div>
-        <!-- End of Gameboard properties -->
 
         <!-- Start of right column -->
         <div class="col-3 px-0">
-          <p><h1 class="vertical">ELUKESKKONNA PLANEERIMINE</h1></p>
+          <h1 class="vertical">ELUKESKKONNA PLANEERIMINE</h1>
         </div>
-        <!-- End of right column -->
+
       </div>
     </div>
     <script>
@@ -959,7 +956,7 @@
 
       function selectBorder(ClickedIDValue){
 
-        var ClickedIDValue2 = ClickedIDValue.replace(/.$/,"1")
+        var ClickedIDValue2 = ClickedIDValue.replace(/.$/,"1");
         document.getElementById(ClickedIDValue2).className = "py-md-2 px-1 img-fluid pointer border border-danger";
         document.getElementById(ClickedIDValue).className = "py-md-2 px-1 img-fluid pointer border border-danger";
       
@@ -970,7 +967,6 @@
 
         let clickedImgIDShowOLD = sessionStorage.getItem('ClickedImgID');
         var clickedImgIDShowOLD2 = clickedImgIDShowOLD.replace(/.$/,"1");
-        console.log("Vana ID on: " + clickedImgIDShowOLD + "|" +clickedImgIDShowOLD2);
         document.getElementById(clickedImgIDShowOLD).className = "py-md-2 px-1 img-fluid pointer";
         document.getElementById(clickedImgIDShowOLD2).className = "py-md-2 px-1 img-fluid pointer";
       
