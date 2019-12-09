@@ -315,3 +315,6 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   pointer-events: none;
   transform: translate(-50%, -50%);
 }
+.whiteCardInputText{
+  font-size: 24px;
+}
