@@ -94,31 +94,31 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-
+          <div class="modal-body">		
+					
             <div class="d-flex flex-wrap justify-content-around">
-    
+						
               <!-- Card Flip Parkla -->
               <div class="p-2 flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img
-                        src="gfx/proposal_cards/parkla1.png"
-                        class="px-1 py-1 img-fluid pointer"
-                        id="parklaImgID1"
-                        onClick="getClickedImgID(this.id)"
-                      />
-                    </div>
-                    <div class="flip-card-back">
-                      <img
-                        src="gfx/proposal_cards/parkla2.png"
-                        class="px-1 py-1 img-fluid pointer"
-                        id="parklaImgID2"
-                        onClick="getClickedImgID(this.id)"
-                      />
-                    </div>
-                  </div>
-                </div>
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img
+											src="gfx/proposal_cards/parkla1.png"
+											class="px-1 py-1 img-fluid pointer"
+											id="parklaImgID1"
+											onClick="getClickedImgID(this.id)"
+										/>
+									</div>
+									<div class="flip-card-back">
+										<img
+											src="gfx/proposal_cards/parkla2.png"
+											class="px-1 py-1 img-fluid pointer"
+											id="parklaImgID2"
+											onClick="getClickedImgID(this.id)"
+										/>
+									</div>
+								</div>
+							</div>
 
               <!-- Card Flip Jäätmejaam -->
               <div class="p-2 flip-card">
@@ -421,19 +421,23 @@
           <div class="modal-body">
             <form>
               <div class="form-group">
-                <textarea
+                <input
+									type="text"
                   class="form-control"
-                  id="whiteCardTextarea"
-                  rows="3"
-                ></textarea>
+									name="whiteCardInputText"
+                  id="whiteCardInput"
+									maxlength="40"
+                />
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button
               type="button"
+							id="submit"
               class="btn btn-primary mx-auto"
               data-dismiss="modal"
+							onclick="saveWhiteCardText()"
             >
               Salvesta
             </button>
@@ -664,7 +668,6 @@
                 >KKK</a
               >
             </li>
-
             <li class="nav-item">
               <a
               class="nav-link py-3"
@@ -674,12 +677,11 @@
               >Toetajad</a
               >
             </li>
-
             <p class="menuTitle py-3 my-0 mt-4 text-uppercase">Info</p>
             <p class="px-3 py-2 m-0">Linna nimi: <label id="cityName"></label></p>
             <p class="px-3 py-2 m-0">Rahva arv: <label id="population"></label></p>
 
-            <p class="menuTitle py-3 my-0 mt-4 text-uppercase">Timer</p>
+            <p class="menuTitle py-3 my-0 mt-4 text-uppercase">Taimer</p>
             <p class="px-3 py-2 m-0">Aega mängu lõpuni: <label id="timer_2">45:00</label></p>
 
             <button type="button" id="toggle" class=" mt-4">Aktiveeri täisekraan</button>
@@ -689,7 +691,7 @@
         <!-- Start of Gameboard properties -->
         <div class="col px-0">
           <div class="d-flex flex-row">
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik1.png"
                 class="img-fluid pointer"
@@ -697,9 +699,10 @@
                 onClick="saveClickedPopertyID(this.id)"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="elamurajoon"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik2.png"
                 class="img-fluid pointer"
@@ -707,9 +710,10 @@
                 onClick="saveClickedPopertyID(this.id)"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="elamurajoon"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik3.png"
                 class="img-fluid pointer"
@@ -717,19 +721,21 @@
                 onClick="saveClickedPopertyID(this.id)"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="elamurajoon"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik4.png"
                 class="img-fluid pointer"
                 id="maastik4ID"
                 onClick="saveClickedPopertyID(this.id)"
                 data-toggle="modal"
-                data-target="#selectNewPropertyModal"
+                data-target="#selectNewPropertyModal" 
+                alt="tühermaa"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik5.png"
                 id="maastik5ID"
@@ -737,11 +743,12 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="prügila"
               />
             </div>
           </div>
           <div class="d-flex flex-row">
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik6.png"
                 id="maastik6ID"
@@ -749,9 +756,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="tühermaa"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik7.png"
                 id="maastik7ID"
@@ -759,9 +767,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kaubanduskeskus, haigla, perearst"  
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik8.png"
                 id="maastik8ID"
@@ -769,9 +778,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="parkla"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik9.png"
                 id="maastik9ID"
@@ -779,9 +789,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kõrghaljastus"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik10.png"
                 id="maastik10ID"
@@ -789,11 +800,12 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kõrghaljastus"
               />
             </div>
           </div>
           <div class="d-flex flex-row">
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik11.png"
                 id="maastik11ID"
@@ -801,9 +813,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kõrghaljastus"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik12.png"
                 id="maastik12ID"
@@ -811,9 +824,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="bürood, politsei"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik13.png"
                 id="maastik13ID"
@@ -821,9 +835,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="vanalinn, linnavalitsus, kirik"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik14.png"
                 id="maastik14ID"
@@ -831,9 +846,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kõrghaljastus"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik15.png"
                 id="maastik15ID"
@@ -841,11 +857,12 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="järv"
               />
             </div>
           </div>
           <div class="d-flex flex-row">
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik16.png"
                 id="maastik16ID"
@@ -853,9 +870,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="elamurajoon"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik17.png"
                 id="maastik17ID"
@@ -863,9 +881,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="tühermaa"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik18.png"
                 id="maastik18ID"
@@ -873,9 +892,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kõrghaljastus"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik19.png"
                 id="maastik19ID"
@@ -883,9 +903,10 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="lasteaed/kool"
               />
             </div>
-            <div class="p-0">
+            <div class="p-0 position-relative">
               <img
                 src="gfx/gameboard/maastik20.png"
                 id="maastik20ID"
@@ -893,6 +914,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="eramud"
               />
             </div>
           </div>
@@ -906,16 +928,69 @@
       </div>
     </div>
     <script>
+			
+			function saveWhiteCardText() {
+        let whiteCardInput = document.getElementById('whiteCardInput').value;
+        sessionStorage.setItem('whiteCardText', whiteCardInput);
+        return true;
+      }
+			
+			function removeWhiteCardText(ClickedIDValue){
+        let clickedImgIDShowOLD = sessionStorage.getItem('ClickedImgID');
+        let clickedProperty = sessionStorage.getItem('ClickedPropertyID');
+        let whiteCardTextNull = sessionStorage.getItem('whiteCardText');
+        //<img>
+        let clickedPropertyID = document.getElementById(clickedProperty);
+        //<div>
+        let clickedPropertyParent = clickedPropertyID.parentNode;
 
+        if (clickedImgIDShowOLD == "valgeKaartImgID2" || whiteCardTextNull == null){
+          //Kui div sees on rohkem kui 1 element ehk <img> ja <p>
+           if(clickedPropertyParent.childElementCount > 1){
+            //<p>
+            let whiteCardParagraph = clickedPropertyID.nextElementSibling;
+            //Eemaldab valge kaardi paragraphi div seest
+            clickedPropertyParent.removeChild(whiteCardParagraph);
+          }
+        }
+        sessionStorage.removeItem('whiteCardText');
+      }
+
+      function showWhiteCardText(ClickedIDValue){
+        let whiteCardTextShow = sessionStorage.getItem('whiteCardText');
+
+        //Uue elemendi <p></p> tegemine koos class="whiteCardText" ,millele lisandub tekst -> whiteCardTextShow
+        let newParagraph = document.createElement("P");
+        newParagraph.className = "whiteCardText";
+        newParagraph.innerHTML = whiteCardTextShow;
+
+        /*
+          Tuleb ülesse leida ClickedIDValue vanem/parent ehk div kus pilt asub 
+          ning sinna alles siis lisada juurde paragraph. Sellega jääb pilt ka alles
+        */
+        document.getElementById(ClickedIDValue).parentElement.appendChild(newParagraph);
+      }
+			
       function saveClickedPopertyID(ClickedPropertyIDValue) {
         
         sessionStorage.setItem('ClickedPropertyID', ClickedPropertyIDValue);
         console.log("ClickedPropertyID: " + ClickedPropertyIDValue); 
-
+        let imgAltText = document.getElementById(ClickedPropertyIDValue).alt;
+        document.getElementById("selectNewPropertyModalTitle").innerHTML = "Vali kinnistu, mida soovid ehitada " + '"' + imgAltText + '"' + " asemele";
       }
 
-
       function getClickedImgID(ClickedID) {
+        if (ClickedID == "valgeKaartImgID2") {
+					removeWhiteCardText(ClickedID);
+          //Valge kaardi idee salvestamine
+          document.getElementById('submit').addEventListener('click', saveWhiteCardText);
+          saveWhiteCardText();
+          sessionStorage.removeItem('whiteCardText');
+        } else {
+
+          removeWhiteCardText(ClickedID);
+
+        }
 
         selectBorderReset(ClickedID);
 
@@ -925,14 +1000,12 @@
 
       }
 
-
       function saveClickedImgID(ClickedIDValue) {
 
         sessionStorage.setItem('ClickedImgID', ClickedIDValue);
         console.log("ClickedImgID: " + ClickedIDValue);
 
       }
-
 
       function selectBorder(ClickedIDValue){
 
@@ -944,7 +1017,6 @@
 
       
       }
-
 
       function selectBorderReset(ClickedIDValue){
 
@@ -966,8 +1038,6 @@
 
       }
 
-
-
       function replaceGameboardPropertyPicture() {
 
         let ClickedPropertyIDShow = sessionStorage.getItem('ClickedPropertyID');
@@ -984,6 +1054,7 @@
         } else if (clickedImgIDShow == "valgeKaartImgID2") {
 
           document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/valge_kaart1Muudetud.png';
+					showWhiteCardText(ClickedPropertyIDShow);
 
         } else if (clickedImgIDShow == "tehas1ImgID2") {
 
