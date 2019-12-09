@@ -699,6 +699,7 @@
                 onClick="saveClickedPopertyID(this.id)"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="elamurajoon"
               />
             </div>
             <div class="p-0 position-relative">
@@ -709,6 +710,7 @@
                 onClick="saveClickedPopertyID(this.id)"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="elamurajoon"
               />
             </div>
             <div class="p-0 position-relative">
@@ -719,6 +721,7 @@
                 onClick="saveClickedPopertyID(this.id)"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="elamurajoon"
               />
             </div>
             <div class="p-0 position-relative">
@@ -728,7 +731,8 @@
                 id="maastik4ID"
                 onClick="saveClickedPopertyID(this.id)"
                 data-toggle="modal"
-                data-target="#selectNewPropertyModal"
+                data-target="#selectNewPropertyModal" 
+                alt="tühermaa"
               />
             </div>
             <div class="p-0 position-relative">
@@ -739,6 +743,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="prügila"
               />
             </div>
           </div>
@@ -751,6 +756,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="tühermaa"
               />
             </div>
             <div class="p-0 position-relative">
@@ -761,6 +767,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kaubanduskeskus, haigla, perearst"  
               />
             </div>
             <div class="p-0 position-relative">
@@ -771,6 +778,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="parkla"
               />
             </div>
             <div class="p-0 position-relative">
@@ -781,6 +789,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kõrghaljastus"
               />
             </div>
             <div class="p-0 position-relative">
@@ -791,6 +800,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kõrghaljastus"
               />
             </div>
           </div>
@@ -803,6 +813,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kõrghaljastus"
               />
             </div>
             <div class="p-0 position-relative">
@@ -813,6 +824,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="bürood, politsei"
               />
             </div>
             <div class="p-0 position-relative">
@@ -823,6 +835,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="vanalinn, linnavalitsus, kirik"
               />
             </div>
             <div class="p-0 position-relative">
@@ -833,6 +846,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kõrghaljastus"
               />
             </div>
             <div class="p-0 position-relative">
@@ -843,6 +857,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="järv"
               />
             </div>
           </div>
@@ -855,6 +870,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="elamurajoon"
               />
             </div>
             <div class="p-0 position-relative">
@@ -865,6 +881,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="tühermaa"
               />
             </div>
             <div class="p-0 position-relative">
@@ -875,6 +892,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="kõrghaljastus"
               />
             </div>
             <div class="p-0 position-relative">
@@ -885,6 +903,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="lasteaed/kool"
               />
             </div>
             <div class="p-0 position-relative">
@@ -895,6 +914,7 @@
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
+                alt="eramud"
               />
             </div>
           </div>
@@ -955,7 +975,8 @@
         
         sessionStorage.setItem('ClickedPropertyID', ClickedPropertyIDValue);
         console.log("ClickedPropertyID: " + ClickedPropertyIDValue); 
-
+        let imgAltText = document.getElementById(ClickedPropertyIDValue).alt;
+        document.getElementById("selectNewPropertyModalTitle").innerHTML = "Vali kinnistu, mida soovid ehitada " + '"' + imgAltText + '"' + " asemele";
       }
 
       function getClickedImgID(ClickedID) {
