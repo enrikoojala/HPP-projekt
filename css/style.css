@@ -213,6 +213,7 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
     border-width: 10px;
     border-radius: 20px;
     height: 300px;
+    pointer-events: none;
 }
 .card-front-2 img {
     position: absolute;
@@ -223,7 +224,8 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
     border-color: #616b6f;
     border-width: 10px;
     border-radius: 20px;
-    height: 400px
+    height: 400px;
+    pointer-events: none;
 }
 .card-front-2 p {
   position: absolute;
@@ -234,6 +236,7 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   color: #f7f7f7;
   -webkit-text-stroke: 2px black;
   opacity: 90%;
+  pointer-events: none;
 }
 .card-front-1 p {
   position: absolute;
@@ -244,6 +247,7 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   color: #f7f7f7;
   -webkit-text-stroke: 2px black;
   opacity: 90%;
+  pointer-events: none;
 }
 /*Linnaplaneerija*/
 .card-back-1 {
