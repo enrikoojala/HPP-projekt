@@ -94,6 +94,60 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+
+          <!--START White Card Modal inside of selectNewPropertyModal -->
+          <div
+            class="modal fade"
+            id="whiteCardTextModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="whiteCardTextModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="whiteCardTextModalLabel">
+                    Kirjuta lühidalt siia oma idee
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="whiteCardForm">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control whiteCardInputText"
+                        name="whiteCardInputText"
+                        id="whiteCardInput"
+                        maxlength="40"
+                      />
+                    </div>
+                    <div class="text-center">
+                      <button 
+                        type="button" 
+                        id="submit" 
+                        class="btn btn-lg mx-auto btn-primary" 
+                        data-dismiss="modal" 
+                        onclick="saveWhiteCardText()"
+                      >
+                        Salvesta
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--END White Card Modal inside of selectNewPropertyModal -->
+
           <div class="modal-body">		
 					
             <div class="d-flex flex-wrap justify-content-around">
@@ -385,62 +439,10 @@
               type="button"
               class="btn btn-primary mx-auto"
               data-dismiss="modal"
-              onClick="replaceGameboardPropertyPicture()"
+              onclick="replaceGameboardPropertyPicture()"
               >
               Vali
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- White Card Modal inside of selectNewPropertyModal -->
-    <div
-      class="modal fade"
-      id="whiteCardTextModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="whiteCardTextModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="whiteCardTextModalLabel">
-              Kirjuta lühidalt siia oma idee
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <input
-									type="text"
-                  class="form-control whiteCardInputText"
-									name="whiteCardInputText"
-                  id="whiteCardInput"
-									maxlength="40"
-                />
-              </div>
-              <div class="text-center">
-                <button 
-                  type="button" 
-                  id="submit" 
-                  class="btn btn-lg mx-auto btn-primary" 
-                  data-dismiss="modal" 
-                  onclick="saveWhiteCardText()"
-                >
-                  Salvesta
-                </button>
-              </div>
-            </form>
           </div>
         </div>
       </div>
@@ -932,9 +934,10 @@
 			function saveWhiteCardText() {
         let whiteCardInput = document.getElementById('whiteCardInput').value;
         sessionStorage.setItem('whiteCardText', whiteCardInput);
+        replaceGameboardPropertyPicture();
         return true;
       }
-			
+      
 			function removeWhiteCardText(ClickedIDValue){
         let clickedImgIDShowOLD = sessionStorage.getItem('ClickedImgID');
         let clickedProperty = sessionStorage.getItem('ClickedPropertyID');
@@ -958,7 +961,6 @@
 
       function showWhiteCardText(ClickedIDValue){
         let whiteCardTextShow = sessionStorage.getItem('whiteCardText');
-
         //Uue elemendi <p></p> tegemine koos class="whiteCardText" ,millele lisandub tekst -> whiteCardTextShow
         let newParagraph = document.createElement("P");
         newParagraph.className = "whiteCardText";
@@ -975,21 +977,21 @@
         
         sessionStorage.setItem('ClickedPropertyID', ClickedPropertyIDValue);
         console.log("ClickedPropertyID: " + ClickedPropertyIDValue); 
+
         let imgAltText = document.getElementById(ClickedPropertyIDValue).alt;
         document.getElementById("selectNewPropertyModalTitle").innerHTML = "Vali kinnistu, mida soovid ehitada " + '"' + imgAltText + '"' + " asemele";
       }
 
       function getClickedImgID(ClickedID) {
+        
         if (ClickedID == "valgeKaartImgID2") {
-					removeWhiteCardText(ClickedID);
-          //Valge kaardi idee salvestamine
-          document.getElementById('submit').addEventListener('click', saveWhiteCardText);
-          saveWhiteCardText();
-          sessionStorage.removeItem('whiteCardText');
-        } else {
-
           removeWhiteCardText(ClickedID);
 
+          //Sisestus kast iga kord tühjaks
+          document.getElementById("whiteCardForm").reset();
+          sessionStorage.removeItem('whiteCardText');
+        } else {
+          removeWhiteCardText(ClickedID);
         }
 
         selectBorderReset(ClickedID);
@@ -1015,7 +1017,6 @@
           
           document.getElementById(ClickedIDValue).className = "px-1 py-1 img-fluid pointer border border-danger";
 
-      
       }
 
       function selectBorderReset(ClickedIDValue){
