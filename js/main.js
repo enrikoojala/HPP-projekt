@@ -45,7 +45,7 @@ $(window).on('load', function() {
     }
 
     function countdown(seconds) {
-      seconds = parseInt(sessionStorage.getItem('seconds')) || seconds;
+      seconds = parseInt(sessionStorage.getItem('Timer 1')) || seconds;
       //Kui on sekundeid mälus siis sessionStorage.getItem() need üles leiab.
       //Kui pole, siis hakkab originaal 180 sekundit alla poole tiksuma.
       //Kui timer on jooksnud 0:00, siis refresh alustab uuesti otsast peale.
@@ -54,23 +54,23 @@ $(window).on('load', function() {
         seconds--;
         //sessionStorage salvestab hetke aja mällu (alles olevad sekundid) võib teha refresh, minna edasi teistele lehtedele või tagasi.
         //Veebileht tuleb kinni panna, et kaotada mälus olev seis.
-        sessionStorage.setItem('seconds', seconds);
+        sessionStorage.setItem('Timer 1', seconds);
         let counter = document.getElementById('timer_1');
         let current_minutes = parseInt(seconds / 60);
         let current_seconds = seconds % 60;
 
-        // if (current_minutes < 3) {
-        //   //Bootstrap roheline värv
-        //   counter.style.color = '#28a745';
-        // }
-        // if (current_minutes < 2) {
-        //   //Bootstrap kollane/oranz värv
-        //   counter.style.color = '#ffc107';
-        // }
-        // if (current_minutes < 1) {
-        //   //Bootstrap punane värv
-        //   counter.style.color = '#dc3545';
-        // }
+        if (current_minutes < 3) {
+          //Bootstrap roheline värv
+          counter.style.color = '#28a745';
+        }
+        if (current_minutes < 2) {
+          //Bootstrap kollane/oranz värv
+          counter.style.color = '#ffc107';
+        }
+        if (current_minutes < 1) {
+          //Bootstrap punane värv
+          counter.style.color = '#dc3545';
+        }
 
         //Andmete välja näitamine html kujul
         counter.innerHTML =
@@ -87,7 +87,7 @@ $(window).on('load', function() {
       }
       tick();
     }
-    countdown(20);
+    countdown(180);
 
     //Linnanime ja rahvaarvu salvestamine
     document.getElementById('submit').addEventListener('click', saveData);
@@ -98,7 +98,7 @@ $(window).on('load', function() {
       sessionStorage.setItem('cityName', cityName);
       sessionStorage.setItem('population', population);	
 
-	  alert("Valisite linnaks " + cityName + "\n ja rahva arvuks " + population + " inimest.");
+	    alert("Valisite linnaks " + cityName + "\n ja rahva arvuks " + population + " inimest.");
       return true;
     }
   }
@@ -132,34 +132,28 @@ $(window).on('load', function() {
     }
     
     function countdown(seconds) {
-      seconds = parseInt(sessionStorage.getItem('Timer 3')) || seconds;
-      //Kui on sekundeid mälus siis sessionStorage.getItem() need üles leiab.
-      //Kui pole, siis hakkab originaal 180 sekundit alla poole tiksuma.
-      //Kui timer on jooksnud 0:00, siis refresh alustab uuesti otsast peale.
+      seconds = parseInt(sessionStorage.getItem('Timer 2')) || seconds;
 
       function tick() {
         seconds--;
-        //sessionStorage salvestab hetke aja mällu (alles olevad sekundid) võib teha refresh, minna edasi teistele lehtedele või tagasi.
-        //Veebileht tuleb kinni panna, et kaotada mälus olev seis.
-        sessionStorage.setItem('Timer 3', seconds);
-        let counter = document.getElementById('timer_3');
+        sessionStorage.setItem('Timer 2', seconds);
+        let counter = document.getElementById('timer_2');
         let current_minutes = parseInt(seconds / 60);
         let current_seconds = seconds % 60;
 
-        // if (current_minutes < 3) {
-        //   //Bootstrap roheline värv
-        //   counter.style.color = '#28a745';
-        // }
-        // if (current_minutes < 2) {
-        //   //Bootstrap kollane/oranz värv
-        //   counter.style.color = '#ffc107';
-        // }
-        // if (current_minutes < 1) {
-        //   //Bootstrap punane värv
-        //   counter.style.color = '#dc3545';
-        // }
+        if (current_minutes < 10) {
+          //Bootstrap roheline värv
+          counter.style.color = '#28a745';
+        }
+        if (current_minutes < 5) {
+          //Bootstrap kollane/oranz värv
+          counter.style.color = '#ffc107';
+        }
+        if (current_minutes < 1) {
+          //Bootstrap punane värv
+          counter.style.color = '#dc3545';
+        }
 
-        //Andmete välja näitamine html kujul
         counter.innerHTML =
           current_minutes +
           ':' +
@@ -174,7 +168,7 @@ $(window).on('load', function() {
       }
       tick();
     }
-    countdown(20);
+    countdown(600);
 
   }
 
@@ -195,7 +189,7 @@ $(window).on('load', function() {
       cityNameShow + ' Elukeskkonna planeerimine';
 
     function countdown(seconds) {
-      seconds = parseInt(sessionStorage.getItem('Timer 2')) || seconds;
+      seconds = parseInt(sessionStorage.getItem('Timer 3')) || seconds;
       //Kui on sekundeid mälus siis sessionStorage.getItem() need üles leiab.
       //Kui pole, siis hakkab originaal 180 sekundit alla poole tiksuma.
       //Kui timer on jooksnud 0:00, siis refresh alustab uuesti otsast peale.
@@ -204,26 +198,26 @@ $(window).on('load', function() {
         seconds--;
         //sessionStorage salvestab hetke aja mällu (alles olevad sekundid) võib teha refresh, minna edasi teistele lehtedele või tagasi.
         //Veebileht tuleb kinni panna, et kaotada mälus olev seis.
-        sessionStorage.setItem('Timer 2', seconds);
-        let timer_2 = document.getElementById('timer_2');
+        sessionStorage.setItem('Timer 3', seconds);
+        let counter = document.getElementById('timer_3');
         let current_minutes = parseInt(seconds / 60);
         let current_seconds = seconds % 60;
 
-        // if (current_minutes < 3) {
-        //   //Bootstrap roheline värv
-        //   timer_2.style.color = '#28a745';
-        // }
-        // if (current_minutes < 2) {
-        //   //Bootstrap kollane/oranz värv
-        //   timer_2.style.color = '#ffc107';
-        // }
-        // if (current_minutes < 1) {
-        //   //Bootstrap punane värv
-        //   timer_2.style.color = '#dc3545';
-        // }
+        if (current_minutes < 45) {
+          //Bootstrap roheline värv
+          counter.style.color = '#28a745';
+        }
+        if (current_minutes < 23) {
+          //Bootstrap kollane/oranz värv
+          counter.style.color = '#ffc107';
+        }
+        if (current_minutes < 5) {
+          //Bootstrap punane värv
+          counter.style.color = '#dc3545';
+        }
 
         //Andmete välja näitamine html kujul
-        timer_2.innerHTML =
+        counter.innerHTML =
           current_minutes +
           ':' +
           (current_seconds < 10 ? '0' : '') +
@@ -240,7 +234,7 @@ $(window).on('load', function() {
       }
       tick();
     }
-    countdown(20);
+    countdown(2700);
 
     // Activate fullscreen / Deactivate fullscreen
     // Button needs to be a link !!!
@@ -281,7 +275,6 @@ $(window).on('load', function() {
     // When the HTML Body element will load gameboard.html, introductionModal will be displayed
     $('#introductionModal').modal('hide'); // to activate, change to show
 
-
     //Linnanime ja rahvaarvu kättesaamine.
     let cityNameShow = sessionStorage.getItem('cityName');
     let populationShow = sessionStorage.getItem('population');
@@ -293,7 +286,7 @@ $(window).on('load', function() {
       cityNameShow + ' Elukeskkonna planeerimine';
 
     function countdown(seconds) {
-      seconds = parseInt(sessionStorage.getItem('Timer 2')) || seconds;
+      seconds = parseInt(sessionStorage.getItem('Timer 3')) || seconds;
       //Kui on sekundeid mälus siis sessionStorage.getItem() need üles leiab.
       //Kui pole, siis hakkab originaal 180 sekundit alla poole tiksuma.
       //Kui timer on jooksnud 0:00, siis refresh alustab uuesti otsast peale.
@@ -302,26 +295,26 @@ $(window).on('load', function() {
         seconds--;
         //sessionStorage salvestab hetke aja mällu (alles olevad sekundid) võib teha refresh, minna edasi teistele lehtedele või tagasi.
         //Veebileht tuleb kinni panna, et kaotada mälus olev seis.
-        sessionStorage.setItem('Timer 2', seconds);
-        let timer_2 = document.getElementById('timer_2');
+        sessionStorage.setItem('Timer 3', seconds);
+        let counter = document.getElementById('timer_3');
         let current_minutes = parseInt(seconds / 60);
         let current_seconds = seconds % 60;
 
-        // if (current_minutes < 3) {
-        //   //Bootstrap roheline värv
-        //   timer_2.style.color = '#28a745';
-        // }
-        // if (current_minutes < 2) {
-        //   //Bootstrap kollane/oranz värv
-        //   timer_2.style.color = '#ffc107';
-        // }
-        // if (current_minutes < 1) {
-        //   //Bootstrap punane värv
-        //   timer_2.style.color = '#dc3545';
-        // }
+        if (current_minutes < 45) {
+          //Bootstrap roheline värv
+          counter.style.color = '#28a745';
+        }
+        if (current_minutes < 23) {
+          //Bootstrap kollane/oranz värv
+          counter.style.color = '#ffc107';
+        }
+        if (current_minutes < 5) {
+          //Bootstrap punane värv
+          counter.style.color = '#dc3545';
+        }
 
         //Andmete välja näitamine html kujul
-        timer_2.innerHTML =
+        counter.innerHTML =
           current_minutes +
           ':' +
           (current_seconds < 10 ? '0' : '') +
@@ -338,7 +331,7 @@ $(window).on('load', function() {
       }
       tick();
     }
-    countdown(20);
+    countdown(2700);
 
     // Activate fullscreen / Deactivate fullscreen
     // Button needs to be a link !!!
