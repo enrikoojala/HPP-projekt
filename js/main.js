@@ -96,8 +96,9 @@ $(window).on('load', function() {
       let population = document.getElementById('population').value;
 
       sessionStorage.setItem('cityName', cityName);
-      sessionStorage.setItem('population', population);
+      sessionStorage.setItem('population', population);	
 
+	  alert("Valisite linnaks " + cityName + "\n ja rahva arvuks " + population + " inimest.");
       return true;
     }
   }
