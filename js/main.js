@@ -225,7 +225,7 @@ $(window).on('load', function() {
         if (seconds > 0) {
           setTimeout(tick, 1000);
         }
-        if (seconds == 10) {
+        if (seconds == 1350) {
           $('#halfTimeModal').modal('show');
         }
         if (seconds <= 0) {
