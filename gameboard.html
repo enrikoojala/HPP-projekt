@@ -431,13 +431,21 @@
                   </div>
                 </div>
               </div>
-
+              
             </div>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer justify-content-center">
             <button
               type="button"
-              class="btn btn-primary mx-auto"
+              class="btn btn-primary"
+              data-dismiss="modal"
+              onclick="changeToDefaultProperty()"
+            >
+              Taasta algne
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
               data-dismiss="modal"
               onclick="replaceGameboardPropertyPicture()"
               >
@@ -698,7 +706,7 @@
                 src="gfx/gameboard/maastik1.png"
                 class="img-fluid pointer"
                 id="maastik1ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
                 alt="elamurajoon"
@@ -709,7 +717,7 @@
                 src="gfx/gameboard/maastik2.png"
                 class="img-fluid pointer"
                 id="maastik2ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
                 alt="elamurajoon"
@@ -720,7 +728,7 @@
                 src="gfx/gameboard/maastik3.png"
                 class="img-fluid pointer"
                 id="maastik3ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
                 alt="elamurajoon"
@@ -731,7 +739,7 @@
                 src="gfx/gameboard/maastik4.png"
                 class="img-fluid pointer"
                 id="maastik4ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal" 
                 alt="tühermaa"
@@ -741,7 +749,7 @@
               <img
                 src="gfx/gameboard/maastik5.png"
                 id="maastik5ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -754,7 +762,7 @@
               <img
                 src="gfx/gameboard/maastik6.png"
                 id="maastik6ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -765,7 +773,7 @@
               <img
                 src="gfx/gameboard/maastik7.png"
                 id="maastik7ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -776,7 +784,7 @@
               <img
                 src="gfx/gameboard/maastik8.png"
                 id="maastik8ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -787,7 +795,7 @@
               <img
                 src="gfx/gameboard/maastik9.png"
                 id="maastik9ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -798,7 +806,7 @@
               <img
                 src="gfx/gameboard/maastik10.png"
                 id="maastik10ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -811,7 +819,7 @@
               <img
                 src="gfx/gameboard/maastik11.png"
                 id="maastik11ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -822,7 +830,7 @@
               <img
                 src="gfx/gameboard/maastik12.png"
                 id="maastik12ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -833,7 +841,7 @@
               <img
                 src="gfx/gameboard/maastik13.png"
                 id="maastik13ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -844,7 +852,7 @@
               <img
                 src="gfx/gameboard/maastik14.png"
                 id="maastik14ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -855,7 +863,7 @@
               <img
                 src="gfx/gameboard/maastik15.png"
                 id="maastik15ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -868,7 +876,7 @@
               <img
                 src="gfx/gameboard/maastik16.png"
                 id="maastik16ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -879,7 +887,7 @@
               <img
                 src="gfx/gameboard/maastik17.png"
                 id="maastik17ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -890,7 +898,7 @@
               <img
                 src="gfx/gameboard/maastik18.png"
                 id="maastik18ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -901,7 +909,7 @@
               <img
                 src="gfx/gameboard/maastik19.png"
                 id="maastik19ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -912,7 +920,7 @@
               <img
                 src="gfx/gameboard/maastik20.png"
                 id="maastik20ID"
-                onClick="saveClickedPopertyID(this.id)"
+                onClick="saveClickedPropertyID(this.id)"
                 class="img-fluid pointer"
                 data-toggle="modal"
                 data-target="#selectNewPropertyModal"
@@ -938,7 +946,7 @@
         return true;
       }
       
-			function removeWhiteCardText(ClickedIDValue){
+			function removeWhiteCardText(){
         let clickedImgIDShowOLD = sessionStorage.getItem('ClickedImgID');
         let clickedProperty = sessionStorage.getItem('ClickedPropertyID');
         let whiteCardTextNull = sessionStorage.getItem('whiteCardText');
@@ -959,7 +967,7 @@
         sessionStorage.removeItem('whiteCardText');
       }
 
-      function showWhiteCardText(ClickedIDValue){
+      function showWhiteCardText(clickedIDValue){
         let whiteCardTextShow = sessionStorage.getItem('whiteCardText');
         //Uue elemendi <p></p> tegemine koos class="whiteCardText" ,millele lisandub tekst -> whiteCardTextShow
         let newParagraph = document.createElement("P");
@@ -967,59 +975,59 @@
         newParagraph.innerHTML = whiteCardTextShow;
 
         /*
-          Tuleb ülesse leida ClickedIDValue vanem/parent ehk div kus pilt asub 
+          Tuleb ülesse leida clickedIDValue vanem/parent ehk div kus pilt asub 
           ning sinna alles siis lisada juurde paragraph. Sellega jääb pilt ka alles
         */
-        document.getElementById(ClickedIDValue).parentElement.appendChild(newParagraph);
+        document.getElementById(clickedIDValue).parentElement.appendChild(newParagraph);
       }
 			
-      function saveClickedPopertyID(ClickedPropertyIDValue) {
+      function saveClickedPropertyID(clickedPropertyIDValue) {
         
-        sessionStorage.setItem('ClickedPropertyID', ClickedPropertyIDValue);
-        console.log("ClickedPropertyID: " + ClickedPropertyIDValue); 
+        sessionStorage.setItem('ClickedPropertyID', clickedPropertyIDValue);
+        console.log("ClickedPropertyID: " + clickedPropertyIDValue); 
 
-        let imgAltText = document.getElementById(ClickedPropertyIDValue).alt;
+        let imgAltText = document.getElementById(clickedPropertyIDValue).alt;
         document.getElementById("selectNewPropertyModalTitle").innerHTML = "Vali kinnistu, mida soovid ehitada " + '"' + imgAltText + '"' + " asemele";
       }
 
-      function getClickedImgID(ClickedID) {
+      function getClickedImgID(clickedID) {
         
-        if (ClickedID == "valgeKaartImgID2") {
-          removeWhiteCardText(ClickedID);
+        if (clickedID == "valgeKaartImgID2") {
+          removeWhiteCardText();
 
           //Sisestus kast iga kord tühjaks
           document.getElementById("whiteCardForm").reset();
           sessionStorage.removeItem('whiteCardText');
         } else {
-          removeWhiteCardText(ClickedID);
+          removeWhiteCardText();
         }
 
-        selectBorderReset(ClickedID);
+        selectBorderReset(clickedID);
 
-        saveClickedImgID(ClickedID);
+        saveClickedImgID(clickedID);
 
-        selectBorder(ClickedID);
-
-      }
-
-      function saveClickedImgID(ClickedIDValue) {
-
-        sessionStorage.setItem('ClickedImgID', ClickedIDValue);
-        console.log("ClickedImgID: " + ClickedIDValue);
+        selectBorder(clickedID);
 
       }
 
-      function selectBorder(ClickedIDValue){
+      function saveClickedImgID(clickedIDValue) {
 
-          var ClickedIDValue2 = ClickedIDValue.replace(/.$/,"1");
+        sessionStorage.setItem('ClickedImgID', clickedIDValue);
+        console.log("ClickedImgID: " + clickedIDValue);
 
-          document.getElementById(ClickedIDValue2).className = "px-1 py-1 img-fluid pointer border border-danger";
+      }
+
+      function selectBorder(clickedIDValue){
+
+          let clickedIDValue2 = clickedIDValue.replace(/.$/,"1");
+
+          document.getElementById(clickedIDValue2).className = "px-1 py-1 img-fluid pointer border border-danger";
           
-          document.getElementById(ClickedIDValue).className = "px-1 py-1 img-fluid pointer border border-danger";
+          document.getElementById(clickedIDValue).className = "px-1 py-1 img-fluid pointer border border-danger";
 
       }
 
-      function selectBorderReset(ClickedIDValue){
+      function selectBorderReset(clickedIDValue){
 
         let clickedImgIDShowOLD = sessionStorage.getItem('ClickedImgID');
 
@@ -1029,7 +1037,7 @@
         
         } else {
 
-          var clickedImgIDShowOLD2 = clickedImgIDShowOLD.replace(/.$/,"1");
+          let clickedImgIDShowOLD2 = clickedImgIDShowOLD.replace(/.$/,"1");
           
           document.getElementById(clickedImgIDShowOLD).className = "px-1 py-1 img-fluid pointer";
           
@@ -1039,59 +1047,70 @@
 
       }
 
+      function changeToDefaultProperty(){
+
+        let clickedPropertyStorageID = sessionStorage.getItem('ClickedPropertyID');
+        let clickedPropertyID = document.getElementById(clickedPropertyStorageID);
+
+        removeWhiteCardText();
+        clickedPropertyStorageID = clickedPropertyStorageID.replace("ID", "");
+        clickedPropertyID.src="gfx/gameboard/" + clickedPropertyStorageID + ".png";
+      }
+
       function replaceGameboardPropertyPicture() {
 
-        let ClickedPropertyIDShow = sessionStorage.getItem('ClickedPropertyID');
+        let clickedPropertyStorageID = sessionStorage.getItem('ClickedPropertyID');
+        let clickedPropertyID = document.getElementById(clickedPropertyStorageID);
         let clickedImgIDShow = sessionStorage.getItem('ClickedImgID');
 
         if (clickedImgIDShow == "parklaImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/parkla1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/parkla1Muudetud.png';
         
         } else if (clickedImgIDShow == "jaatmejaamImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/jaatmejaam1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/jaatmejaam1Muudetud.png';
 
         } else if (clickedImgIDShow == "valgeKaartImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/valge_kaart1Muudetud.png';
-					showWhiteCardText(ClickedPropertyIDShow);
-
+          clickedPropertyID.src='gfx/proposal_cards/valge_kaart1Muudetud.png';
+					showWhiteCardText(clickedPropertyStorageID);
+          
         } else if (clickedImgIDShow == "tehas1ImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/tehas1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/tehas1Muudetud.png';
 
         } else if (clickedImgIDShow == "tehas2ImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/tehas1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/tehas1Muudetud.png';
 
         } else if (clickedImgIDShow == "tehaseParklaImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/tehase_parkla1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/tehase_parkla1Muudetud.png';
 
         } else if (clickedImgIDShow == "sotsiaalmajaImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/sotsiaalmaja1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/sotsiaalmaja1Muudetud.png';
 
         } else if (clickedImgIDShow == "looduskaitsealaImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/looduskaitseala1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/looduskaitseala1Muudetud.png';
 
         } else if (clickedImgIDShow == "eramudImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/eramud1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/eramud1Muudetud.png';
 
         } else if (clickedImgIDShow == "valijousaalImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/valijousaal1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/valijousaal1Muudetud.png';
 
         } else if (clickedImgIDShow == "staadionImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/staadion1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/staadion1Muudetud.png';
 
         } else if (clickedImgIDShow == "linnaparkImgID2") {
 
-          document.getElementById(ClickedPropertyIDShow).src='gfx/proposal_cards/linnapark1Muudetud.png';
+          clickedPropertyID.src='gfx/proposal_cards/linnapark1Muudetud.png';
 
         } else {
 
