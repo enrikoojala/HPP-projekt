@@ -90,7 +90,7 @@ $(window).on('load', function() {
     countdown(180);
 
     //Linnanime ja rahvaarvu salvestamine
-    document.getElementById('submit').addEventListener('click', saveData);
+    document.getElementById('submitData').addEventListener('click', saveData);
     function saveData() {
       let cityName = document.getElementById('cityName').value;
       let population = document.getElementById('population').value;
