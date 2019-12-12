@@ -98,7 +98,6 @@ $(window).on('load', function() {
       sessionStorage.setItem('cityName', cityName);
       sessionStorage.setItem('population', population);	
 
-	    alert("Valisite linnaks " + cityName + "\n ja rahva arvuks " + population + " inimest.");
       return true;
     }
   }
@@ -366,4 +365,7 @@ $(window).on('load', function() {
     }
   }
 
+});
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
 });
