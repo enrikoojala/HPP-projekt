@@ -437,7 +437,7 @@
           <div class="modal-footer justify-content-center">
             <button
               type="button"
-              class="btn btn-primary mr-3 px-5"
+              class="btn btn-primary ml-5 px-5"
               data-dismiss="modal"
               onclick="replaceGameboardPropertyPicture()"
               >
@@ -446,11 +446,11 @@
             <button
               type="button"
               id="defaultPropertyBtn"
-              class="btn btn-primary ml-3"
+              class="btn btn-primary"
               data-dismiss="modal"
               onclick="changeToDefaultProperty()"
             >
-              Taasta algne Kinnistu
+              Taasta algne kinnistu
             </button>
           </div>
         </div>
@@ -748,7 +748,7 @@
             <p class="menuTitle py-3 my-0 mt-4 text-uppercase">Taimer</p>
             <p class="px-3 py-2 m-0">Aega mängu lõpuni: <label id="timer_3">45:00</label></p>
 
-            <button type="button" id="toggle" class=" mt-4">Aktiveeri täisekraan</button>
+            <button type="button" id="toggle" class="btn btn-secondary mt-4">Aktiveeri täisekraan</button>
 
       </div>
 
@@ -1043,8 +1043,6 @@
         let imgAltText = document.getElementById(clickedPropertyIDValue).alt;
         document.getElementById("selectNewPropertyModalTitle").innerHTML = "Vali kinnistu, mida soovid ehitada " + '"' + imgAltText + '"' + " asemele";
       
-        let defaultPropertyBtnID = document.getElementById("defaultPropertyBtn");
-        defaultPropertyBtnID.innerHTML = "Taasta " + imgAltText + " kinnistu";
       }
 
       function getClickedImgID(clickedID) {
