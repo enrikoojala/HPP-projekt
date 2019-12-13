@@ -119,6 +119,18 @@
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
+@media screen and (max-width:1366px){
+  .modal-xl{
+    max-width: 800px;
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 190px;
+    height: 190px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+}
+
 /* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
