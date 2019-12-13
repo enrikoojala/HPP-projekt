@@ -27,8 +27,20 @@ $(window).on('load', function() {
     window.location.pathname.lastIndexOf('/') + 1
   );
 
-  // If in a specific HTML page, then run script
+  
+  /**
+  * If in a specific HTML page, then run script
+  * cityname_population_cityplanner.html
+  */
+
   if (fileName == 'cityname_population_cityplanner.html') {
+
+    // if there is no 'cityName' sessionStorage item then we will greate one
+    if (sessionStorage.getItem('cityName') == null) {
+      sessionStorage.setItem('cityName', '');
+      sessionStorage.setItem('population', '');
+    } 
+
     document.getElementById(
       'rollidLinnaplaneerijaID'
     ).innerHTML = linnaplaneerijaUrl;
@@ -43,6 +55,7 @@ $(window).on('load', function() {
         height: 175
       });
     }
+
 
     function countdown(seconds) {
       seconds = parseInt(sessionStorage.getItem('Timer 1')) || seconds;
@@ -84,25 +97,56 @@ $(window).on('load', function() {
         if (seconds <= 0) {
           $('#andmedTimerModal').modal('show');
         }
+    
+        /**
+          * If SesstionStorage Item 'cityName' has no value then
+          * input fields 'cityName' / 'population' will be enabled
+          * and 'alertSaved' will NOT be shown.
+          * Else the input fields 'cityName' / 'population' will be * disabledand 'alertSaved' will be shown.
+        */
+
+        if (sessionStorage.getItem('cityName') !== '') {
+          document.getElementById('cityName').readOnly = true;
+          document.getElementById('population').readOnly = true;
+          document.getElementById('alertSaved').style.display = "block";
+
+        } else {
+          document.getElementById('cityName').readOnly = false;
+          document.getElementById('population').readOnly = false;
+          document.getElementById('alertSaved').style.display = "none";
+        }
+  
       }
       tick();
     }
     countdown(180);
 
-    //Linnanime ja rahvaarvu salvestamine
+
+    /**
+     * Saving cityName and population to sessionStorage
+     * https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+     */
+
     document.getElementById('submitData').addEventListener('click', saveData);
+    
     function saveData() {
+
       let cityName = document.getElementById('cityName').value;
       let population = document.getElementById('population').value;
 
       sessionStorage.setItem('cityName', cityName);
       sessionStorage.setItem('population', population);	
 
+
       return true;
     }
   }
 
-  // If in a specific HTML page, then run script
+
+  /**
+  * If in a specific HTML page, then run script
+  * roles.html
+  */
   if (fileName == 'roles.html') {
     document.getElementById('rollidInvestorID').innerHTML = investorUrl;
     document.getElementById('rollidSotsiaalnounikID').innerHTML = sotsiaalnounikUrl;
@@ -130,6 +174,7 @@ $(window).on('load', function() {
       });
     }
     
+
     function countdown(seconds) {
       seconds = parseInt(sessionStorage.getItem('Timer 2')) || seconds;
 
@@ -171,13 +216,22 @@ $(window).on('load', function() {
 
   }
 
-  // If in a specific HTML page, then run script
+
+  /**
+  * If in a specific HTML page, then run script
+  * gameboard.html
+  */
   if (fileName == 'gameboard.html') {
+
     // When the HTML Body element will load gameboard.html, introductionModal will be displayed
-    $('#introductionModal').modal('hide'); // to activate, change to show
+    $('#introductionModal').modal('show'); // show/hide
 
 
-    //Linnanime ja rahvaarvu kättesaamine.
+    /**
+     * Saving cityName and population to sessionStorage
+     * https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+     */
+
     let cityNameShow = sessionStorage.getItem('cityName');
     let populationShow = sessionStorage.getItem('population');
 
@@ -235,8 +289,12 @@ $(window).on('load', function() {
     }
     countdown(2700);
 
-    // Activate fullscreen / Deactivate fullscreen
-    // Button needs to be a link !!!
+
+    /**
+     * Activate fullscreen / Deactivate fullscreen
+     * Button needs to be a link in the menu and Edgse support
+     */
+
     if (document.fullscreenEnabled) {
       var btn = document.getElementById('toggle');
 
@@ -267,105 +325,5 @@ $(window).on('load', function() {
       });
     }
   }
-
-
-  // If in a specific HTML page, then run script
-  if (fileName == 'gameboardTest.html') {
-    // When the HTML Body element will load gameboard.html, introductionModal will be displayed
-    $('#introductionModal').modal('hide'); // to activate, change to show
-
-    //Linnanime ja rahvaarvu kättesaamine.
-    let cityNameShow = sessionStorage.getItem('cityName');
-    let populationShow = sessionStorage.getItem('population');
-
-    document.getElementById('cityName').innerHTML = cityNameShow;
-    document.getElementById('population').innerHTML = populationShow;
-
-    document.getElementsByTagName('Title')[0].text =
-      cityNameShow + ' Elukeskkonna planeerimine';
-
-    function countdown(seconds) {
-      seconds = parseInt(sessionStorage.getItem('Timer 3')) || seconds;
-      //Kui on sekundeid mälus siis sessionStorage.getItem() need üles leiab.
-      //Kui pole, siis hakkab originaal 180 sekundit alla poole tiksuma.
-      //Kui timer on jooksnud 0:00, siis refresh alustab uuesti otsast peale.
-
-      function tick() {
-        seconds--;
-        //sessionStorage salvestab hetke aja mällu (alles olevad sekundid) võib teha refresh, minna edasi teistele lehtedele või tagasi.
-        //Veebileht tuleb kinni panna, et kaotada mälus olev seis.
-        sessionStorage.setItem('Timer 3', seconds);
-        let counter = document.getElementById('timer_3');
-        let current_minutes = parseInt(seconds / 60);
-        let current_seconds = seconds % 60;
-
-        if (current_minutes < 45) {
-          //Bootstrap roheline värv
-          counter.style.color = '#28a745';
-        }
-        if (current_minutes < 23) {
-          //Bootstrap kollane/oranz värv
-          counter.style.color = '#ffc107';
-        }
-        if (current_minutes < 5) {
-          //Bootstrap punane värv
-          counter.style.color = '#dc3545';
-        }
-
-        //Andmete välja näitamine html kujul
-        counter.innerHTML =
-          current_minutes +
-          ':' +
-          (current_seconds < 10 ? '0' : '') +
-          current_seconds;
-        if (seconds > 0) {
-          setTimeout(tick, 1000);
-        }
-        if (seconds == 10) {
-          $('#halfTimeModal').modal('show');
-        }
-        if (seconds <= 0) {
-          $('#gameOverModal').modal('show');
-        }
-      }
-      tick();
-    }
-    countdown(2700);
-
-    // Activate fullscreen / Deactivate fullscreen
-    // Button needs to be a link !!!
-    if (document.fullscreenEnabled) {
-      var btn = document.getElementById('toggle');
-
-      btn.addEventListener(
-        'click',
-        function(event) {
-          if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen();
-          } else {
-            document.exitFullscreen();
-          }
-        },
-        false
-      );
-
-      document.addEventListener('fullscreenchange', function(event) {
-        console.log(event);
-
-        if (!document.fullscreenElement) {
-          btn.innerText = 'Aktiveeri täisekraan';
-        } else {
-          btn.innerText = 'Deaktiveeri täisekraan';
-        }
-      });
-
-      document.addEventListener('fullscreenerror', function(event) {
-        console.log(event);
-      });
-    }
-  }
-
 });
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();   
-});
+
