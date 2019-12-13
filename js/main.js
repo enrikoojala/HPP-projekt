@@ -315,8 +315,12 @@ $(window).on('load', function() {
 
         if (!document.fullscreenElement) {
           btn.innerText = 'Aktiveeri täisekraan';
+          document.getElementById('rightColumn').className = "col-3 px-0";
+          console.log("Midagi tehti");
+
         } else {
           btn.innerText = 'Deaktiveeri täisekraan';
+          document.getElementById('rightColumn').className = "col-2 px-0";
         }
       });
 
