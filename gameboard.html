@@ -127,13 +127,13 @@
                         class="form-control whiteCardInputText"
                         name="whiteCardInputText"
                         id="whiteCardInput"
-                        maxlength="40"
+                        maxlength="50"
                       />
                     </div>
                     <div class="text-center">
                       <button 
                         type="button" 
-                        id="submit" 
+                        id="submitWhiteCardBtn" 
                         class="btn btn-lg mx-auto btn-primary" 
                         data-dismiss="modal" 
                         onclick="saveWhiteCardText()"
@@ -994,12 +994,20 @@
     <script>
 			
 			function saveWhiteCardText() {
-        let whiteCardInput = document.getElementById('whiteCardInput').value;
-        sessionStorage.setItem('whiteCardText', whiteCardInput);
+        let whiteCardInputText = document.getElementById('whiteCardInput').value;
+        sessionStorage.setItem('whiteCardText', whiteCardInputText);
         replaceGameboardPropertyPicture();
         return true;
       }
       
+      let whiteCardInput = document.getElementById('whiteCardInput');
+      whiteCardInput.addEventListener("keypress", function(event){
+        if (event.keyCode === 13){
+          event.preventDefault();
+          document.getElementById("submitWhiteCardBtn").click();
+        }
+      });
+
 			function removeWhiteCardText(){
         let clickedImgIDShowOLD = sessionStorage.getItem('ClickedImgID');
         let clickedProperty = sessionStorage.getItem('ClickedPropertyID');
