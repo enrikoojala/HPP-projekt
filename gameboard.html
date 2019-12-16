@@ -202,8 +202,9 @@
                   <div class="flip-card-front">
                     <img
                       src="gfx/proposal_cards/valge_kaart1.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
+                      data-toggle="modal"
+                      data-target="#whiteCardTextModal"
                       id="valgeKaartImgID1"
                       onClick="getClickedImgID(this.id)"
                     />
@@ -211,7 +212,6 @@
                   <div class="flip-card-back">
                     <img
                       src="gfx/proposal_cards/valge_kaart2.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       data-toggle="modal"
                       data-target="#whiteCardTextModal"
@@ -228,7 +228,6 @@
                   <div class="flip-card-front">
                     <img
                       src="gfx/proposal_cards/tehas1.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="tehas1ImgID1"
                       onClick="getClickedImgID(this.id)"
@@ -237,7 +236,6 @@
                   <div class="flip-card-back">
                     <img
                       src="gfx/proposal_cards/tehas2.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="tehas1ImgID2"
                       onClick="getClickedImgID(this.id)"
@@ -252,7 +250,6 @@
                   <div class="flip-card-front">
                     <img
                       src="gfx/proposal_cards/tehas1.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="tehas2ImgID1"
                       onClick="getClickedImgID(this.id)"
@@ -261,7 +258,6 @@
                   <div class="flip-card-back">
                     <img
                       src="gfx/proposal_cards/tehas2.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="tehas2ImgID2"
                       onClick="getClickedImgID(this.id)"
@@ -298,7 +294,6 @@
                   <div class="flip-card-front">
                     <img
                       src="gfx/proposal_cards/sotsiaalmaja1.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="sotsiaalmajaImgID1"
                       onClick="getClickedImgID(this.id)"
@@ -307,7 +302,6 @@
                   <div class="flip-card-back">
                     <img
                       src="gfx/proposal_cards/sotsiaalmaja2.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="sotsiaalmajaImgID2"
                       onClick="getClickedImgID(this.id)"
@@ -322,7 +316,6 @@
                   <div class="flip-card-front">
                     <img
                       src="gfx/proposal_cards/looduskaitseala1.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="looduskaitsealaImgID1"
                       onClick="getClickedImgID(this.id)"
@@ -331,7 +324,6 @@
                   <div class="flip-card-back">
                     <img
                       src="gfx/proposal_cards/looduskaitseala2.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="looduskaitsealaImgID2"
                       onClick="getClickedImgID(this.id)"
@@ -390,7 +382,6 @@
                   <div class="flip-card-front">
                     <img
                       src="gfx/proposal_cards/staadion1.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="staadionImgID1"
                       onClick="getClickedImgID(this.id)"
@@ -399,7 +390,6 @@
                   <div class="flip-card-back">
                     <img
                       src="gfx/proposal_cards/staadion2.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="staadionImgID2"
                       onClick="getClickedImgID(this.id)"
@@ -414,7 +404,6 @@
                   <div class="flip-card-front">
                     <img
                       src="gfx/proposal_cards/linnapark1.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="linnaparkImgID1"
                       onClick="getClickedImgID(this.id)"
@@ -423,7 +412,6 @@
                   <div class="flip-card-back">
                     <img
                       src="gfx/proposal_cards/linnapark2.png"
-                      
                       class="px-1 py-1 img-fluid pointer"
                       id="linnaparkImgID2"
                       onClick="getClickedImgID(this.id)"
@@ -1082,7 +1070,12 @@
 
       function selectBorder(clickedIDValue){
 
+          //console.log(clickedIDValue);
           let clickedIDValue2 = clickedIDValue.replace(/.$/,"1");
+
+          if (clickedIDValue == clickedIDValue2) {
+            clickedIDValue2 = clickedIDValue.replace(/.$/,"2");
+          }
 
           document.getElementById(clickedIDValue2).className = "px-1 py-1 img-fluid pointer border border-danger";
           
@@ -1127,52 +1120,52 @@
         let clickedPropertyID = document.getElementById(clickedPropertyStorageID);
         let clickedImgIDShow = sessionStorage.getItem('ClickedImgID');
 
-        if (clickedImgIDShow == "parklaImgID2") {
+        if (clickedImgIDShow == "parklaImgID1" || clickedImgIDShow == "parklaImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/parkla1Muudetud.png';
         
-        } else if (clickedImgIDShow == "jaatmejaamImgID2") {
+        } else if (clickedImgIDShow == "jaatmejaamImgID1" || clickedImgIDShow == "jaatmejaamImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/jaatmejaam1Muudetud.png';
 
-        } else if (clickedImgIDShow == "valgeKaartImgID2") {
+        } else if (clickedImgIDShow == "valgeKaartImgID1" || clickedImgIDShow == "valgeKaartImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/valge_kaart1Muudetud.png';
 					showWhiteCardText(clickedPropertyStorageID);
           
-        } else if (clickedImgIDShow == "tehas1ImgID2") {
+        } else if (clickedImgIDShow == "tehas1ImgID1" || clickedImgIDShow == "tehas1ImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/tehas1Muudetud.png';
 
-        } else if (clickedImgIDShow == "tehas2ImgID2") {
+        } else if (clickedImgIDShow == "tehas2ImgID1" || clickedImgIDShow == "tehas2ImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/tehas1Muudetud.png';
 
-        } else if (clickedImgIDShow == "tehaseParklaImgID2") {
+        } else if (clickedImgIDShow == "tehaseParklaImgID1" || clickedImgIDShow == "tehaseParklaImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/tehase_parkla1Muudetud.png';
 
-        } else if (clickedImgIDShow == "sotsiaalmajaImgID2") {
+        } else if (clickedImgIDShow == "sotsiaalmajaImgID1" || clickedImgIDShow == "sotsiaalmajaImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/sotsiaalmaja1Muudetud.png';
 
-        } else if (clickedImgIDShow == "looduskaitsealaImgID2") {
+        } else if (clickedImgIDShow == "looduskaitsealaImgID1" || clickedImgIDShow == "looduskaitsealaImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/looduskaitseala1Muudetud.png';
 
-        } else if (clickedImgIDShow == "eramudImgID2") {
+        } else if (clickedImgIDShow == "eramudImgID1" || clickedImgIDShow == "eramudImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/eramud1Muudetud.png';
 
-        } else if (clickedImgIDShow == "valijousaalImgID2") {
+        } else if (clickedImgIDShow == "valijousaalImgID1" || clickedImgIDShow == "valijousaalImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/valijousaal1Muudetud.png';
 
-        } else if (clickedImgIDShow == "staadionImgID2") {
+        } else if (clickedImgIDShow == "staadionImgID1" || clickedImgIDShow == "staadionImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/staadion1Muudetud.png';
 
-        } else if (clickedImgIDShow == "linnaparkImgID2") {
+        } else if (clickedImgIDShow == "linnaparkImgID1" || clickedImgIDShow == "linnaparkImgID2") {
 
           clickedPropertyID.src='gfx/proposal_cards/linnapark1Muudetud.png';
 
