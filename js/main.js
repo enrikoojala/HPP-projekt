@@ -1,3 +1,16 @@
+// Get the filename of HTML files
+var fileName = window.location.pathname.substring(
+  window.location.pathname.lastIndexOf('/') + 1
+);
+
+//Need to this outside of window.load, because global scope
+if (fileName == "roles.html"){
+  //adds a visited class on each clicked role card
+  function addVisitedClass(clickedCardID) {
+    document.getElementById(clickedCardID).classList.add('visited');
+  }
+}
+
 $(window).on('load', function() {
   // Get Hostname and port
   let host = location.host;
@@ -22,12 +35,6 @@ $(window).on('load', function() {
   let koolidirektorUrl = protocol + '//' + host + koolidirektorPath;
   let aktiivneLinnaelanikUrl = protocol + '//' + host + aktiivneLinnaelanikPath;
 
-  // Get the filename of HTML files
-  var fileName = window.location.pathname.substring(
-    window.location.pathname.lastIndexOf('/') + 1
-  );
-
-  
   /**
   * If in a specific HTML page, then run script
   * cityname_population_cityplanner.html
@@ -180,6 +187,9 @@ $(window).on('load', function() {
       });
     }
     
+    
+    
+
     function countdown(seconds) {
       seconds = parseInt(sessionStorage.getItem('Timer 2')) || seconds;
 
@@ -214,6 +224,12 @@ $(window).on('load', function() {
         if (seconds <= 0) {
           $('#kaardiValimiseTimerModal').modal('show');
         }
+
+        //All roles need to clicked at least once for the "Edasi" button to go active
+        if (document.querySelectorAll('.visited').length > 5) {
+          document.getElementById('rolesPageBtn').classList.remove("disabled");
+        }
+
       }
       tick();
     }

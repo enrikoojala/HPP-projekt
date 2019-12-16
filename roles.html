@@ -94,7 +94,7 @@
             <p>
               <ul>
 				  	   <li>Eluviisi nõustamine</li>
-  					   <li>elukeskkond ja selle mõju tervisele</li>
+  					   <li>Elukeskkond ja selle mõju tervisele</li>
  					     <li>Sektorite ülene koostöö tervisedenduses</li>
 				  	   <li>Tervislik töö- ja elukeskkond</li>
   					   <li>Terviseteadlik liikumine</li>
@@ -104,7 +104,10 @@
             3. Millised ülesanded on õppejõul?
             </b>
             <p><br>
-              Õppejõu ülesanne on juhtida koostatud linnaplaani või linnaplaanide tutvustamist ning küsida õppeainega seotud täpsustavaid küsimusi. Oluline on välja tuua, et tervise ja heaolu edendamine on midagi, mida mõjutavad paljud ametnikud väga erinevatest valdkondadest ning kodanikud, kes esindavad laia ampluaad teadmisi. Seega on tervisedenduse alased teadmised olulised kõigile. Täpne fookus tagasiside ringis on õppejõu valida ning sõltub õppeainest.
+              Õppejõu ülesanne on juhtida koostatud linnaplaani või linnaplaanide tutvustamist ning küsida õppeainega seotud täpsustavaid küsimusi. 
+              Oluline on välja tuua, et tervise ja heaolu edendamine on midagi, mida mõjutavad paljud ametnikud väga erinevatest valdkondadest ning kodanikud, 
+              kes esindavad laia ampluaad teadmisi. Seega on tervisedenduse alased teadmised olulised kõigile. 
+              Täpne fookus tagasiside ringis on õppejõu valida ning sõltub õppeainest.
             </p><br>
             <b>   
 			     4. Mitu mängijat saavad korraga mängu mängida?
@@ -237,7 +240,7 @@
       </section>
     </header>
 
-    <main class="container-fluid mt-4 p-0">
+    <main class="container-fluid mt-4">
       <div class="row">
     
           <!-- Start of NAV -->
@@ -290,7 +293,7 @@
                     <label class="card-flip-role">
                       <input class="input-hide" type="checkbox" />
                       <div class="card-flip">
-                        <div class="card-front-1">
+                        <div class="card-front-1" id="cardFront1" onClick="addVisitedClass(this.id)">
                           <img src='gfx/cards/kaart_kool.svg'/>
                           <p>1</p>
                         </div>
@@ -359,7 +362,7 @@
                     <label class="card-flip-role">
                       <input class="input-hide" type="checkbox" />
                       <div class="card-flip">
-                        <div class="card-front-1">
+                        <div class="card-front-1" id="cardFront2" onClick="addVisitedClass(this.id)">
                           <img src='gfx/cards/kaart_kula.svg'/>
                           <p>2</p>
                         </div>
@@ -428,7 +431,7 @@
                     <label class="card-flip-role">
                       <input class="input-hide" type="checkbox" />
                       <div class="card-flip">
-                        <div class="card-front-1">
+                        <div class="card-front-1" id="cardFront3" onClick="addVisitedClass(this.id)">
                           <img src='gfx/cards/kaart_mets.svg'/>
                           <p>3</p>
                         </div>
@@ -502,7 +505,7 @@
                     <label class="card-flip-role">
                       <input class="input-hide" type="checkbox" />
                       <div class="card-flip">
-                        <div class="card-front-1">
+                        <div class="card-front-1" id="cardFront4" onClick="addVisitedClass(this.id)">
                           <img src='gfx/cards/kaart_mets2.svg'/>
                           <p>4</p>
                         </div>
@@ -571,7 +574,7 @@
                     <label class="card-flip-role">
                       <input class="input-hide" type="checkbox" />
                       <div class="card-flip">
-                        <div class="card-front-1">
+                        <div class="card-front-1" id="cardFront5" onClick="addVisitedClass(this.id)">
                           <img src='gfx/cards/kaart_parkla.svg'/>
                           <p>5</p>
                         </div>
@@ -639,7 +642,7 @@
                     <label class="card-flip-role">
                       <input class="input-hide" type="checkbox" />
                       <div class="card-flip">
-                        <div class="card-front-1">
+                        <div class="card-front-1" id="cardFront6" onClick="addVisitedClass(this.id)">
                           <img src='gfx/cards/kaart_tuhermaa.svg'/>
                           <p>6</p>
                         </div>
@@ -729,7 +732,8 @@
     <footer>
       <div class="row mx-0">
         <a
-          class="btn btn-primary btn-lg mx-auto my-3 w-25"
+          class="btn btn-primary btn-lg mx-auto my-3 w-25 disabled"
+          id="rolesPageBtn"
           href="gameboard.html"
           role="button"
           >Edasi</a
