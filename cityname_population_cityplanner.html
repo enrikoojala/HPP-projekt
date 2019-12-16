@@ -94,7 +94,7 @@
             <p>
               <ul>
                <li>Eluviisi nõustamine</li>
-               <li>elukeskkond ja selle mõju tervisele</li>
+               <li>Elukeskkond ja selle mõju tervisele</li>
                <li>Sektorite ülene koostöö tervisedenduses</li>
                <li>Tervislik töö- ja elukeskkond</li>
                <li>Terviseteadlik liikumine</li>
@@ -104,7 +104,10 @@
             3. Millised ülesanded on õppejõul?
             </b>
             <p><br>
-              Õppejõu ülesanne on juhtida koostatud linnaplaani või linnaplaanide tutvustamist ning küsida õppeainega seotud täpsustavaid küsimusi. Oluline on välja tuua, et tervise ja heaolu edendamine on midagi, mida mõjutavad paljud ametnikud väga erinevatest valdkondadest ning kodanikud, kes esindavad laia ampluaad teadmisi. Seega on tervisedenduse alased teadmised olulised kõigile. Täpne fookus tagasiside ringis on õppejõu valida ning sõltub õppeainest.
+              Õppejõu ülesanne on juhtida koostatud linnaplaani või linnaplaanide tutvustamist ning küsida õppeainega seotud täpsustavaid küsimusi. 
+              Oluline on välja tuua, et tervise ja heaolu edendamine on midagi, mida mõjutavad paljud ametnikud väga erinevatest valdkondadest ning kodanikud, 
+              kes esindavad laia ampluaad teadmisi. Seega on tervisedenduse alased teadmised olulised kõigile. 
+              Täpne fookus tagasiside ringis on õppejõu valida ning sõltub õppeainest.
             </p><br>
             <b>   
            4. Mitu mängijat saavad korraga mängu mängida?
@@ -207,7 +210,7 @@
           </div>
           <div class="modal-body text-center">
               <p>Kokkuleppimise aeg sai läbi!</p>
-              <p>Sisestage linnanimi ja rahvaarv</p>
+              <p>Sisestage linna nimi ja rahvaarv</p>
               <p>Laua eestkõneleja võtab kaardi</p>
               </p>
             </div>
@@ -341,7 +344,7 @@
                       type="text"
                       id="cityName"
                       class="form-control mb-4"
-                      placeholder=""
+                      placeholder="Sisestage linna nimi"
                       autofocus=""
                       required
                     />
@@ -350,13 +353,13 @@
                       type="number"
                       id="population"
                       class="form-control mb-5"
-                      placeholder=""
+                      placeholder="Sisestage rahvaarv"
                       required
                     />
                     <button
                       class="btn btn-lg btn-primary btn-block mb-4"
                       type="submit"
-                      id="submitData"                      
+                      id="submitData"               
                     >
                       Salvesta
                     </button>
@@ -383,7 +386,7 @@
                 <div class="col text-center">
 
                   <label class="card-flip-role">
-                    <input class="input-hide" type="checkbox" />
+                    <input class="input-hide" type="checkbox"/>
                     <div class="card-flip">
                       <div class="card-front-2">
                       	<img src='gfx/cards/kaart_linn.svg'/>
@@ -427,7 +430,8 @@
     <footer>
         <div class="row mx-0">
             <a
-              class="btn btn-primary btn-lg mx-auto my-3 w-25"
+              class="btn btn-primary btn-lg mx-auto my-3 w-25 disabled"
+              id="nextPageBtn"
               href="roles.html"
               role="button"
               >Edasi</a

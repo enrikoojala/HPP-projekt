@@ -35,28 +35,27 @@ $(window).on('load', function() {
 
   if (fileName == 'cityname_population_cityplanner.html') {
 
-    // if there is no 'cityName' sessionStorage item then we will greate one
-    if (sessionStorage.getItem('cityName') == null) {
-      sessionStorage.setItem('cityName', '');
-      sessionStorage.setItem('population', '');
-    } 
+    let cityNameStorage = sessionStorage.getItem('cityName');
+    let populationStorage = sessionStorage.getItem('population');
+    let submitDataBtn = document.getElementById('submitData');
+
+    // if 'cityName' is empty or null then button has "Salvesta" text, if there is 'cityName' then button text changes to "Muuda"
+    if (cityNameStorage == '' || cityNameStorage == null) {
+      submitDataBtn.innerHTML = "Salvesta";
+    } else {
+      submitDataBtn.innerHTML = "Muuda";
+    }
 
     document.getElementById(
       'rollidLinnaplaneerijaID'
     ).innerHTML = linnaplaneerijaUrl;
-    let urls = [linnaplaneerijaUrl];
-
-    urls.forEach(makeQRCode);
-
-    function makeQRCode(item, index) {
-      let qrcode = new QRCode(document.getElementById('qrcode_' + index), {
-        text: item,
+    
+    new QRCode(document.getElementById('qrcode_0'), {
+        text: linnaplaneerijaUrl,
         width: 175,
         height: 175
-      });
-    }
-
-
+    });
+    
     function countdown(seconds) {
       seconds = parseInt(sessionStorage.getItem('Timer 1')) || seconds;
       //Kui on sekundeid mälus siis sessionStorage.getItem() need üles leiab.
@@ -73,15 +72,15 @@ $(window).on('load', function() {
         let current_seconds = seconds % 60;
 
         if (current_minutes < 3) {
-          //Bootstrap roheline värv
+          //Bootstrap green color
           counter.style.color = '#28a745';
         }
         if (current_minutes < 2) {
-          //Bootstrap kollane/oranz värv
+          //Bootstrap orange color
           counter.style.color = '#ffc107';
         }
         if (current_minutes < 1) {
-          //Bootstrap punane värv
+          //Bootstrap red color
           counter.style.color = '#dc3545';
         }
 
@@ -99,21 +98,25 @@ $(window).on('load', function() {
         }
     
         /**
-          * If SesstionStorage Item 'cityName' has no value then
-          * input fields 'cityName' / 'population' will be enabled
-          * and 'alertSaved' will NOT be shown.
-          * Else the input fields 'cityName' / 'population' will be * disabledand 'alertSaved' will be shown.
+          * If sessionStorage Item 'cityName' has value AND isn't empty
+          * input fields 'cityName' / 'population' will be disabled
+          * and 'alertSaved' will be shown.
+          * Since button text has changed to "Muuda", which can be clicked again to change cityName and population values
+          * Else the input fields 'cityName' / 'population' will be enabled and 'alertSaved' will not be shown.
         */
-
-        if (sessionStorage.getItem('cityName') !== '') {
+        
+        if (cityNameStorage != null && cityNameStorage != '') {
           document.getElementById('cityName').readOnly = true;
+          document.getElementById('cityName').placeholder = cityNameStorage;
           document.getElementById('population').readOnly = true;
+          document.getElementById('population').placeholder = populationStorage;
           document.getElementById('alertSaved').style.display = "block";
-
-        } else {
+          document.getElementById('nextPageBtn').classList.remove("disabled");
+        } else{
           document.getElementById('cityName').readOnly = false;
-          document.getElementById('population').readOnly = false;
+          document.getElementById('population').readOnly = false;     
           document.getElementById('alertSaved').style.display = "none";
+          document.getElementById('nextPageBtn').classList.add("disabled");
         }
   
       }
@@ -121,24 +124,27 @@ $(window).on('load', function() {
     }
     countdown(180);
 
-
     /**
      * Saving cityName and population to sessionStorage
      * https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
      */
 
-    document.getElementById('submitData').addEventListener('click', saveData);
+    submitDataBtn.addEventListener('click', saveData);
     
     function saveData() {
 
       let cityName = document.getElementById('cityName').value;
       let population = document.getElementById('population').value;
 
-      sessionStorage.setItem('cityName', cityName);
-      sessionStorage.setItem('population', population);	
+      if (cityName != '' && population != ''){
+        sessionStorage.setItem('cityName', cityName);
+        sessionStorage.setItem('population', population);
 
-
-      return true;
+        return true;
+      } else {
+        sessionStorage.setItem('cityName', '');
+        sessionStorage.setItem('population', '');
+      }
     }
   }
 
@@ -167,14 +173,13 @@ $(window).on('load', function() {
     urls.forEach(makeQRCode);
 
     function makeQRCode(item, index) {
-      let qrcode = new QRCode(document.getElementById('qrcode_' + index), {
+      new QRCode(document.getElementById('qrcode_' + index), {
         text: item,
         width: 175,
         height: 175
       });
     }
     
-
     function countdown(seconds) {
       seconds = parseInt(sessionStorage.getItem('Timer 2')) || seconds;
 
@@ -186,15 +191,15 @@ $(window).on('load', function() {
         let current_seconds = seconds % 60;
 
         if (current_minutes < 10) {
-          //Bootstrap roheline värv
+          //Bootstrap green color
           counter.style.color = '#28a745';
         }
         if (current_minutes < 5) {
-          //Bootstrap kollane/oranz värv
+          //Bootstrap orange color
           counter.style.color = '#ffc107';
         }
         if (current_minutes < 1) {
-          //Bootstrap punane värv
+          //Bootstrap red color
           counter.style.color = '#dc3545';
         }
 
@@ -226,9 +231,8 @@ $(window).on('load', function() {
     // When the HTML Body element will load gameboard.html, introductionModal will be displayed
     $('#introductionModal').modal('show'); // show/hide
 
-
     /**
-     * Saving cityName and population to sessionStorage
+     * Getting cityName and population from sessionStorage
      * https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
      */
 
@@ -257,15 +261,15 @@ $(window).on('load', function() {
         let current_seconds = seconds % 60;
 
         if (current_minutes < 45) {
-          //Bootstrap roheline värv
+          //Bootstrap green color
           counter.style.color = '#28a745';
         }
         if (current_minutes < 23) {
-          //Bootstrap kollane/oranz värv
+          //Bootstrap orange color
           counter.style.color = '#ffc107';
         }
         if (current_minutes < 5) {
-          //Bootstrap punane värv
+          //Bootstrap red color
           counter.style.color = '#dc3545';
         }
 
@@ -288,7 +292,6 @@ $(window).on('load', function() {
       tick();
     }
     countdown(2700);
-
 
     /**
      * Activate fullscreen / Deactivate fullscreen
@@ -330,4 +333,3 @@ $(window).on('load', function() {
     }
   }
 });
-
