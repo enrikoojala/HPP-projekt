@@ -695,13 +695,21 @@
         <!-- Start of NAV -->
         <div class="col-2 pl-0 pr-3">
           <nav class="nav flex-column bg-light h-100 text-center menu">
-            <p class="menuTitle py-3 my-0 text-uppercase">Lingid</p>
+            <p class="menuTitle py-3 my-0 text-uppercase">Taimer</p>
+            <p class="px-3 py-2 m-0"><label id="timer_3" class="h2">45:00</label></p>
+
+            <p class="menuTitle py-3 my-0 mt-4 text-uppercase">Info</p>
+            <p class="px-3 py-2 m-0">Linna nimi: <label id="cityName"></label></p>
+            <p class="px-3 py-2 m-0">Rahvaarv: <label id="population"></label></p>
+
+            <p class="menuTitle py-3 mt-4 my-0 text-uppercase">Lingid</p>
             <li class="nav-item">
               <a
                 class="nav-link py-3"
                 href="index.html"
                 >Avalehele</a
               >
+            </li>
             <li class="nav-item">
               <a
                 class="nav-link py-3"
@@ -729,16 +737,9 @@
               >Toetajad</a
               >
             </li>
-            <p class="menuTitle py-3 my-0 mt-4 text-uppercase">Info</p>
-            <p class="px-3 py-2 m-0">Linna nimi: <label id="cityName"></label></p>
-            <p class="px-3 py-2 m-0">Rahvaarv: <label id="population"></label></p>
-
-            <p class="menuTitle py-3 my-0 mt-4 text-uppercase">Taimer</p>
-            <p class="px-3 py-2 m-0">Aega mängu lõpuni: <label id="timer_3">45:00</label></p>
-
-            <button type="button" id="toggle" class="btn btn-secondary mt-4">Aktiveeri täisekraan</button>
-
-      </div>
+            <button type="button" id="toggle" class="mt-4 w-100 py-3 btn btn-primary">Aktiveeri täisekraan</button>
+          </nav>
+        </div>
 
         <!-- Start of Gameboard properties -->
         <div class="col px-0">
@@ -1046,7 +1047,7 @@
         if (clickedID == "valgeKaartImgID2") {
           removeWhiteCardText();
 
-          //Sisestus kast iga kord tühjaks
+          //Resets input everytime
           document.getElementById("whiteCardForm").reset();
           sessionStorage.removeItem('whiteCardText');
         } else {
@@ -1070,9 +1071,9 @@
 
       function selectBorder(clickedIDValue){
 
-          //console.log(clickedIDValue);
           let clickedIDValue2 = clickedIDValue.replace(/.$/,"1");
 
+          //If clicked faster then replace other way around
           if (clickedIDValue == clickedIDValue2) {
             clickedIDValue2 = clickedIDValue.replace(/.$/,"2");
           }
@@ -1094,6 +1095,11 @@
         } else {
 
           let clickedImgIDShowOLD2 = clickedImgIDShowOLD.replace(/.$/,"1");
+          
+          //If clicked faster then replace other way around
+          if (clickedImgIDShowOLD == clickedImgIDShowOLD2) {
+            clickedImgIDShowOLD2 = clickedImgIDShowOLD.replace(/.$/,"2");
+          }
           
           document.getElementById(clickedImgIDShowOLD).className = "px-1 py-1 img-fluid pointer";
           
