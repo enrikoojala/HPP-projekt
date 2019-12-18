@@ -17,13 +17,13 @@ $(window).on('load', function() {
   let protocol = location.protocol;
 
   // Player Role Card path
-  let linnaplaneerijaPath = '/rollid/linnaplaneerija';
+  let linnaplaneerijaPath = '/rollid/planeerija';
   let investorPath = '/rollid/investor/';
-  let sotsiaalnounikPath = '/rollid/sotsiaalnounik/';
-  let looduskaitsebioloogPath = '/rollid/looduskaitsebioloog/';
-  let kinnisvaraarendajaPath = '/rollid/kinnisvaraarendaja/';
-  let koolidirektorPath = '/rollid/koolidirektor/';
-  let aktiivneLinnaelanikPath = '/rollid/aktiivne_linnaelanik/';
+  let sotsiaalnounikPath = '/rollid/nounik/';
+  let looduskaitsebioloogPath = '/rollid/bioloog/';
+  let kinnisvaraarendajaPath = '/rollid/arendaja/';
+  let koolidirektorPath = '/rollid/dire/';
+  let aktiivneLinnaelanikPath = '/rollid/elanik/';
 
   // Create Player Role URL based on
   // protocol, host and Player Role Card path
