@@ -9,12 +9,172 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
 
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
     <title>Lauamäng "Elukeskkonna planeerimine"</title>
   </head>
 
   <body>
+    <!-- Modal mangu juhend -->
+    <div
+      class="modal fade juhendModal-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="juhendModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title ml-2">Mängu juhend</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <img
+            src="gfx/juhend_est.svg"
+            onerror="this.onerror=null; this.src='image.png'"
+          />
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary mx-auto"
+              data-dismiss="modal"
+            >
+              Sulge
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal KKK -->
+    <div
+      class="modal fade KKKModal-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="KKKModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title ml-2">Korduma kippuvad küsimused</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="text-justify mx-4 my-4">
+            <b>
+              1. Mis on lauamängu eesmärk?
+            </b>  
+            <p><br>
+              Mängu eesmärk on läbi rollimängu analüüsida ja õppida keskkonna mõju olulisust tervisele ja heaolule.
+            </p><br>
+            <b>
+            2. Milliste ainete loengusse sobib mäng suurepäraselt?
+            </b> 
+            <p>
+              <ul>
+               <li>Eluviisi nõustamine</li>
+               <li>Elukeskkond ja selle mõju tervisele</li>
+               <li>Sektorite ülene koostöö tervisedenduses</li>
+               <li>Tervislik töö- ja elukeskkond</li>
+               <li>Terviseteadlik liikumine</li>
+              </ul>
+            </p><br>
+            <b>
+            3. Millised ülesanded on õppejõul?
+            </b>
+            <p><br>
+              Õppejõu ülesanne on juhtida koostatud linnaplaani või linnaplaanide tutvustamist ning küsida õppeainega seotud täpsustavaid küsimusi. 
+              Oluline on välja tuua, et tervise ja heaolu edendamine on midagi, mida mõjutavad paljud ametnikud väga erinevatest valdkondadest ning kodanikud, 
+              kes esindavad laia ampluaad teadmisi. Seega on tervisedenduse alased teadmised olulised kõigile. 
+              Täpne fookus tagasiside ringis on õppejõu valida ning sõltub õppeainest.
+            </p><br>
+            <b>   
+           4. Mitu mängijat saavad korraga mängu mängida?
+            </b>
+            <p><br>
+             Vaja on mängujuhti ja 7 mängijat laudkonna kohta ja laudkondi võib olla piirmatult.     
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary mx-auto"
+              data-dismiss="modal"
+            >
+              Sulge
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Modal ruutkoodi skanneerija -->
+      <div
+      class="modal fade ruutkoodModal-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="ruutkoodModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title ml-2">Ruutkoodi (QR kood) kasutamine</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="text-justify mx-4 my-4">
+            <h5 class="card-title">
+               Apple seadmetes
+            </h5>
+            <p>Apple seadmetesse on ruutkoodi lugeja kaamera tarkvarasse sisse ehitatud. Ruutkoodi lugemiseks käivita kaamera ja suuna ruutkoodi peale. Palutakse info vaatamiseks näpuga vajutada ekraani ülaserva ilmuvat infoakent.</p>
+            <p>Vaata täpsemalt: <a href="https://support.apple.com/en-us/HT208843" target="_blank">https://support.apple.com/en-us/HT208843</a></p>
+            
+            <h5 class="card-title mt-5">
+              Android seadmetes
+           </h5>
+           <p>Android seadmetesse alates versioonist 9 on ruutkoodi lugeja juba sisse pandud. Ava kaamera ja suuna ruutkoodile, edasi avaneb juba vajalik info ekraanile.</p>
+           <p>Android seadmed versiooniga 8 ja vanemad ei ole ruutkoodi lugejat sisse pandud. Selleks soovitame kasutada Google Lens rakendust.</p>
+           <p>Vaata täpsemalt: <a href="https://play.google.com/store/apps/details?id=com.google.ar.lens&hl=en" target="_blank"> Google Lens Google play rakendustepoes</a></p>
+
+         </div>
+            <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary mx-auto"
+              data-dismiss="modal"
+            >
+              Sulge
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <header class="bg-white">
-      <section class="jumbotron text-center py-5">
+      <section class="jumbotron text-center py-5 my-0">
         <div class="container-fluid">
           <h1 class="jumbotron-heading">
             Lauamäng "Elukeskkonna planeerimine"
@@ -23,72 +183,135 @@
             Mängu eesmärk on läbi rollimängu analüüsida ja õppida keskkonna mõju
             olulisust tervisele ja heaolule
           </p>
-          <p>
-            <a href="cityname_population_cityplanner.html" class="btn btn-primary btn-lg my-2">Alusta mängu</a>
-          </p>
         </div>
       </section>
     </header>
 
     <main role="main" class="bg-white">
-      <div class="py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img
-                  class="img-fluid"
-                  src="gfx/gameplay/Game_1.jpg"
-                  height=""
-                  alt=""
-                />
-                <div class="card-body">
-                  <p class="card-text text-justify">
-                    Loodud lauamäng simuleerib linnaplaneerimise koosolekut ning
-                    on koostatud nii, et seda saab mängida nii ühe kui mitme
-                    erineva laudkonnaga samaaegselt. Kui mängijate arv täpselt
-                    seitsmega ei jagu, siis saab osades laudkondades mõningaid
-                    rolle dubleerida.
-                  </p>
-                </div>
+      <div class="container">
+        <div class="card-group my-3">
+          <div class="card mw-100 border-light">
+            <div class="card-body mx-auto">
+              
+              <h3 class="card-title">Mida on vaja mängimiseks?</h3>
+              <ul>
+                <li>Tutvuda:
+                  <ul>
+                    <li>
+                      <a
+                      class=""
+                      href=""
+                      data-toggle="modal"
+                      data-backdrop="static"
+                      data-keyboard="false"
+                      data-target=".juhendModal-lg"
+                      >mängujuhendiga</a>
+                    </li>
+                    <li>
+                      <a
+                      class=""
+                      href=""
+                      data-toggle="modal"
+                      data-target=".KKKModal-lg"
+                      data-backdrop="static"
+                      data-keyboard="false"
+                      >korduma kippuvate küsimustega</a>
+                    </li> 
+                  </ul>
+                </li>
+
+
+                </oli>
+                <li>7 mängijat</li>
+                <li>Suure ekraaniga arvuti või arvuti koos projektoriga</li>
+                <li>Nutiseade (mobiil, tahvelarvuti)</li>
+                <li>
+                  <a
+                  class=""
+                  href=""
+                  data-toggle="modal"
+                  data-backdrop="static"
+                  data-keyboard="false"
+                  data-target=".ruutkoodModal-lg"
+                  >Ruutkoodi skanneerija Nutiseadmes</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card mw-100 border-light">
+            <div class="card-body mx-auto mt-5">
+              <p class="my-0">
+                <h3 class="card-title mb-4">Alusta mängu siit!</h3>
+
+                <a
+                  href="cityname_population_cityplanner.html"
+                  class="btn btn-primary btn-lg w-100"
+                  >Mängima</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img
+                class="img-fluid"
+                src="gfx/gameplay/Game_3.jpg"
+                height=""
+                alt=""
+              />
+              <div class="card-body">
+                <h5 class="card-title">Eesmärk</h5>
+                <p class="card-text text-justify">
+                  Kuna mängu peamine eesmärk on tekkiv arutelu, siis on
+                  mängujärgne tagasiside ning mõttevahetus äärmiselt olulised.
+                  Õppejõu ülesanne on juhtida koostatud linnaplaani või
+                  linnaplaanide tutvustamist ning küsida õppeainega seotud
+                  täpsustavaid küsimusi.
+                </p>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img
-                  class="img-fluid"
-                  src="gfx/gameplay/Game_3.jpg"
-                  height=""
-                  alt=""
-                />
-                <div class="card-body">
-                  <p class="card-text text-justify">
-                    Kuna mängu peamine eesmärk on tekkiv arutelu, siis on
-                    mängujärgne tagasiside ning mõttevahetus äärmiselt olulised.
-                    Õppejõu ülesanne on juhtida koostatud linnaplaani või
-                    linnaplaanide tutvustamist ning küsida õppeainega seotud
-                    täpsustavaid küsimusi.
-                  </p>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img
+                class="img-fluid"
+                src="gfx/gameplay/Game_1.jpg"
+                height=""
+                alt=""
+              />
+              <div class="card-body">
+                <h5 class="card-title">Lauamäng simuleerib</h5>
+                <p class="card-text text-justify">
+                  Loodud lauamäng simuleerib linnaplaneerimise koosolekut ning
+                  on koostatud nii, et seda saab mängida nii ühe kui mitme
+                  erineva laudkonnaga samaaegselt. Kui mängijate arv täpselt
+                  seitsmega ei jagu, siis saab osades laudkondades mõningaid
+                  rolle dubleerida.
+                </p>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img
-                  class="img-fluid"
-                  src="gfx/gameplay/Game_4.jpg"
-                  height=""
-                  alt=""
-                />
-                <div class="card-body">
-                  <p class="card-text text-justify">
-                    Oluline on välja tuua, et tervise ja heaolu edendamine on
-                    midagi, mida mõjutavad paljud ametnikud väga erinevatest
-                    valdkondadest ning kodanikud, kes esindavad laia ampluaad
-                    teadmisi. Seega on tervisedenduse alased teadmised olulised
-                    kõigile.
-                  </p>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img
+                class="img-fluid"
+                src="gfx/gameplay/Game_4.jpg"
+                height=""
+                alt=""
+              />
+              <div class="card-body">
+                <h5 class="card-title">Tervise ja heaolu edendamine</h5>
+                <p class="card-text text-justify">
+                  Oluline on välja tuua, et tervise ja heaolu edendamine on
+                  midagi, mida mõjutavad paljud ametnikud väga erinevatest
+                  valdkondadest ning kodanikud, kes esindavad laia ampluaad
+                  teadmisi. Seega on tervisedenduse alased teadmised olulised
+                  kõigile.
+                </p>
               </div>
             </div>
           </div>

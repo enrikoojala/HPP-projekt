@@ -101,7 +101,7 @@ $(window).on('load', function() {
           setTimeout(tick, 1000);
         }
         if (seconds <= 0) {
-          $('#andmedTimerModal').modal('show');
+          $('#andmedTimerModal').modal({backdrop: 'static', keyboard: false, show: true});
         }
     
         /**
@@ -222,7 +222,7 @@ $(window).on('load', function() {
           setTimeout(tick, 1000);
         }
         if (seconds <= 0) {
-          $('#kaardiValimiseTimerModal').modal('show');
+          $('#kaardiValimiseTimerModal').modal({backdrop: 'static', keyboard: false, show: true});
         }
 
         //All roles need to clicked at least once for the "Edasi" button to go active
@@ -245,7 +245,7 @@ $(window).on('load', function() {
   if (fileName == 'gameboard.html') {
 
     // When the HTML Body element will load gameboard.html, introductionModal will be displayed
-    $('#introductionModal').modal('show'); // show/hide
+    $('#introductionModal').modal({backdrop: 'static', keyboard: false, show: true}); // show/hide
 
     /**
      * Getting cityName and population from sessionStorage
@@ -299,10 +299,10 @@ $(window).on('load', function() {
           setTimeout(tick, 1000);
         }
         if (seconds == 1350) {
-          $('#halfTimeModal').modal('show');
+          $('#halfTimeModal').modal({backdrop: 'static', keyboard: false, show: true});
         }
         if (seconds <= 0) {
-          $('#gameOverModal').modal('show');
+          $('#gameOverModal').modal({backdrop: 'static', keyboard: false, show: true});
         }
       }
       tick();
